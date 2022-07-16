@@ -5,6 +5,6 @@
 #include <gtest/gtest.h>
 #include "../src/Engine.hpp"
 
-TEST(EngineTest, test_init) {
+TEST(EngineTest, testInit) {
     Engine engine;
 }
