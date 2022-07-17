@@ -2,87 +2,108 @@
 // Created by Marty Kostov on 15.07.22.
 //
 
-#include <sstream>
 #include "Lexer.hpp"
 
-std::vector<Token>* Lexer::getTokens(std::string &inProgram) const {
-    auto* tokens = new std::vector<Token>;
-
-    std::istringstream inProgramStream(inProgram);
-
-
-    std::string word;
-    while ( inProgramStream >> word ) {
-        Token token;
-        token.value = word;
-
-        if (operators.find(word) != operators.end()) {
-            token.type = TokenType::OPERATOR;
-
-        } else if ( isNumber(word) ) {
-            token.type = TokenType::NUMBER;
-
-        } else if ( isArgument(word) ) {
-            token.type = TokenType::ARGUMENT;
-
-        } else if ( isIdentifier(word) ) {
-            token.type = TokenType::IDENTIFIER;
-
-        } else {
-            delete tokens;
-            return nullptr;
-        }
-        tokens->push_back(token);
-    }
-
-
-    return tokens;
+void Lexer::enterText(const std::string &inProgram) {
+    this->inProgram = inProgram;
+    this->index = 0;
+    this->line = 0;
 }
 
-bool Lexer::isNumber(const std::string& word) {
-    bool haveDot = false;
+Token Lexer::getNextToken() {
 
-    for (int i = 0; i < word.length(); ++i) {
-        if (!isdigit(word[i])) {
-            if(word[i] == '.') {
-                if(haveDot) {
-                    return false;
-                } else {
-                    haveDot = true;
-                }
-            } else {
-                return false;
+    cleanSpaces();
+
+    if (index == inProgram.length()) {
+        return {TokenType::END, ""};
+    }
+
+    if (operatorsSymbols.find( inProgram[index] ) != operatorsSymbols.end()) {
+        return getOperatorsToken();
+
+    } else if ( isdigit( inProgram[index] ) ) {
+        return getNumbToken();
+
+    } else if ( inProgram[index] == '#' ) {
+        ++index;
+        return getArgumentToken();
+
+    } else if ( isalpha(inProgram[0]) || inProgram[0] == '_' ) {
+        return getIdentifierToken();
+
+    } else {
+        return {TokenType::ERROR, "Not valid syntax on line " + std::to_string(line) + "!"};
+    }
+}
+
+void Lexer::cleanSpaces() {
+    while (isspace(inProgram[index])) {
+        if(inProgram[index] == '\n') {
+            ++line;
+        }
+        ++index;
+    }
+}
+
+Token Lexer::getOperatorsToken() {
+    std::string value;
+    for (; index < inProgram.length(); ++index) {
+        if(operatorsSymbols.find( inProgram[index] ) != operatorsSymbols.end()) {
+            value += inProgram[index];
+            if ( operators.find( value ) != operators.end() ) {
+                ++index;
+                return {TokenType::OPERATOR, value};
             }
         }
     }
 
-    return true;
+    return {TokenType::ERROR, "Not valid operator \"" + value + "\" on line " + std::to_string(line) + "!"};
 }
 
-bool Lexer::isArgument(const std::string &word) {
-    if (word[0] != '#') {
-        return false;
-    }
+Token Lexer::getNumbToken() {
+    std::string value;
+    bool haveDot = false;
 
-    for (int i = 1; i < word.length(); ++i) {
-        if (!isdigit(word[i])) {
-            return false;
+    for (; index < inProgram.length(); ++index) {
+        if (isdigit(inProgram[index])) {
+            value += inProgram[index];
+
+        } else if(inProgram[index] == '.') {
+            if(haveDot) {
+                return {TokenType::ERROR, "Not valid number \"" + value + "\" on line " + std::to_string(line) + "!"};
+
+            } else {
+                haveDot = true;
+                value += inProgram[index];
+            }
+        } else {
+            break;
         }
     }
 
-    return true;
+    return {TokenType::NUMBER, value};
 }
 
-bool Lexer::isIdentifier(const std::string &word) {
-    if ( !isalpha(word[0]) && word[0] != '_' ) {
-        return false;
+Token Lexer::getArgumentToken() {
+    std::string value;
+
+    for (; index < inProgram.length() && isdigit(inProgram[index]); ++index) {
+            value += inProgram[index];
     }
 
-    for (int i = 1; i < word.length(); i++) {
-        if ( !isalnum(word[0]) && word[0] != '_' ) {
-            return false;
-        }
+    if (value.length() == 0) {
+        return {TokenType::ERROR, "Not valid argument on line " + std::to_string(line) + "!"};
     }
 
-    return true;
+    return {TokenType::ARGUMENT, value};
+}
+
+Token Lexer::getIdentifierToken() {
+    std::string value;
+
+    for (; index < inProgram.length() && (isalnum(inProgram[index]) || inProgram[index] == '_'); ++index) {
+        value += inProgram[index];
+    }
+
+    return {TokenType::IDENTIFIER, value};
 }

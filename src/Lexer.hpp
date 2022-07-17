@@ -11,16 +11,24 @@
 #include "Token.hpp"
 
 class Lexer {
-    std::unordered_set<std::string> operators = {"(", ")", ",", "[", "]", "->"};
+    std::unordered_set<char> operatorsSymbols = {'(', ')', ',', '[', ']', '-', '>'};
+    std::unordered_set<std::string> operators = {"(", ")", ",", "[" , "]", "->"};
 
-    static bool isNumber(const std::string& word);
-    static bool isArgument(const std::string& word);
-    static bool isIdentifier(const std::string& word);
+    std::string inProgram;
+    size_t index = 0;
+    size_t line = 0;
+
+    void cleanSpaces();
+    Token getOperatorsToken();
+    Token getNumbToken();
+    Token getArgumentToken();
+    Token getIdentifierToken();
 
 public:
     Lexer() = default;
 
-    std::vector<Token>* getTokens(std::string &inProgram) const;
+    void enterText(const std::string &inProgram);
+    Token getNextToken();
 };
 
 

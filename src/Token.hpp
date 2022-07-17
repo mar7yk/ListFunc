@@ -6,13 +6,15 @@
 #define LISTFUNC_TOKEN_HPP
 
 
-#include <c++/v1/string>
+#include <string>
 
 enum class TokenType {
-    NUMBER = 0,
-    ARGUMENT,
+    END = 0,
     OPERATOR,
+    NUMBER,
+    ARGUMENT,
     IDENTIFIER,
+    ERROR,
 };
 
 struct Token {

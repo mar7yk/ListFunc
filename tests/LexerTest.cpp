@@ -19,64 +19,79 @@ struct LexerTest : testing::Test {
 TEST_F(LexerTest, testNumber) {
     std::string inProgram = "32";
 
-    std::vector<Token>* tokensPtr = lexer->getTokens(inProgram);
-    ASSERT_NE(tokensPtr, nullptr);
+    lexer->enterText(inProgram);
 
-    std::vector<Token> &tokens = *tokensPtr;
-    ASSERT_EQ(tokens.size(), 1);
+    Token token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::NUMBER);
+    ASSERT_EQ(token.value, "32");
 
-    ASSERT_EQ(tokens[0].type, TokenType::NUMBER);
-    ASSERT_EQ(tokens[0].value, "32");
-
-    delete tokensPtr;
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::END);
 }
 
 TEST_F(LexerTest, testList) {
-    std::string inProgram = "[ 1 12 123 ]";
+    std::string inProgram = "[ 1 1.2 123 ]";
 
-    std::vector<Token>* tokensPtr = lexer->getTokens(inProgram);
-    ASSERT_NE(tokensPtr, nullptr);
+    lexer->enterText(inProgram);
 
-    std::vector<Token> &tokens = *tokensPtr;
-    ASSERT_EQ(tokens.size(), 5);
+    Token token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::OPERATOR);
+    ASSERT_EQ(token.value, "[");
 
-    ASSERT_EQ(tokens[0].type, TokenType::OPERATOR);
-    ASSERT_EQ(tokens[0].value, "[");
-    ASSERT_EQ(tokens[1].type, TokenType::NUMBER);
-    ASSERT_EQ(tokens[1].value, "1");
-    ASSERT_EQ(tokens[2].type, TokenType::NUMBER);
-    ASSERT_EQ(tokens[2].value, "12");
-    ASSERT_EQ(tokens[3].type, TokenType::NUMBER);
-    ASSERT_EQ(tokens[3].value, "123");
-    ASSERT_EQ(tokens[4].type, TokenType::OPERATOR);
-    ASSERT_EQ(tokens[4].value, "]");
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::NUMBER);
+    ASSERT_EQ(token.value, "1");
 
-    delete tokensPtr;
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::NUMBER);
+    ASSERT_EQ(token.value, "1.2");
+
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::NUMBER);
+    ASSERT_EQ(token.value, "123");
+
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::OPERATOR);
+    ASSERT_EQ(token.value, "]");
+
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::END);
 }
 
 TEST_F(LexerTest, testFunctionDeclaration) {
-    std::string inProgram = "myList -> [ #0 #1 #2 ]";
+    std::string inProgram = "myList -> [#0 #1 #2]";
 
-    std::vector<Token>* tokensPtr = lexer->getTokens(inProgram);
-    ASSERT_NE(tokensPtr, nullptr);
+    lexer->enterText(inProgram);
 
-    std::vector<Token> &tokens = *tokensPtr;
-    ASSERT_EQ(tokens.size(), 7);
 
-    ASSERT_EQ(tokens[0].type, TokenType::IDENTIFIER);
-    ASSERT_EQ(tokens[0].value, "myList");
-    ASSERT_EQ(tokens[1].type, TokenType::OPERATOR);
-    ASSERT_EQ(tokens[1].value, "->");
-    ASSERT_EQ(tokens[2].type, TokenType::OPERATOR);
-    ASSERT_EQ(tokens[2].value, "[");
-    ASSERT_EQ(tokens[3].type, TokenType::ARGUMENT);
-    ASSERT_EQ(tokens[3].value, "#0");
-    ASSERT_EQ(tokens[4].type, TokenType::ARGUMENT);
-    ASSERT_EQ(tokens[4].value, "#1");
-    ASSERT_EQ(tokens[5].type, TokenType::ARGUMENT);
-    ASSERT_EQ(tokens[5].value, "#2");
-    ASSERT_EQ(tokens[6].type, TokenType::OPERATOR);
-    ASSERT_EQ(tokens[6].value, "]");
+    Token token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::IDENTIFIER);
+    ASSERT_EQ(token.value, "myList");
 
-    delete tokensPtr;
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::OPERATOR);
+    ASSERT_EQ(token.value, "->");
+
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::OPERATOR);
+    ASSERT_EQ(token.value, "[");
+
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::ARGUMENT);
+    ASSERT_EQ(token.value, "0");
+
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::ARGUMENT);
+    ASSERT_EQ(token.value, "1");
+
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::ARGUMENT);
+    ASSERT_EQ(token.value, "2");
+
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::OPERATOR);
+    ASSERT_EQ(token.value, "]");
+
+    token = lexer->getNextToken();
+    ASSERT_EQ(token.type, TokenType::END);
 }
