@@ -168,6 +168,7 @@ Parser::Parser() {
     functionRegister = new FunctionRegister();
 }
 Parser::~Parser() {
+    delete lexer;
     delete functionRegister;
 }
 
