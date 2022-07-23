@@ -16,5 +16,5 @@ void ConsoleHandle::executeLine(const std::string &line) {
     std::string result = expression->execute();
     delete expression;
 
-    std::cout << result;
+    std::cout << result << "\n";
 }
