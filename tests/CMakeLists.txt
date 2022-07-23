@@ -4,7 +4,7 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 set(TEST_FILES
         EngineTest.cpp
         LexerTest.cpp
-        )
+        ParserTest.cpp)
 
 add_executable(test ${TEST_FILES})
 
