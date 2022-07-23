@@ -48,15 +48,19 @@ void Lexer::cleanSpaces() {
 Token Lexer::getOperatorsToken() {
     std::string value;
     for (; index < inProgram.length(); ++index) {
-        if(operatorsSymbols.find( inProgram[index] ) != operatorsSymbols.end()) {
-            value += inProgram[index];
-            if ( operators.find( value ) != operators.end() ) {
-                ++index;
-                return {TokenType::OPERATOR, value};
-            }
-        } else {
+        if(operatorsSymbols.find( inProgram[index] ) == operatorsSymbols.end()) {
             break;
-        };
+        }
+
+        value += inProgram[index];
+    }
+
+    while (!value.empty()) {
+        if ( operators.find( value ) != operators.end() ) {
+            return {TokenType::OPERATOR, value};
+        }
+        value.resize(value.size() - 1);
+        --index;
     }
 
     return {TokenType::ERROR, "Not valid operator \"" + value + "\" on line " + std::to_string(line) + "!"};
