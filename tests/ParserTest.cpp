@@ -17,7 +17,6 @@ struct ParserTest : testing::Test {
     }
 
     void test( const std::vector<std::string> &inProgram, const std::vector<std::string> &results) {
-        size_t counter = 0;
 
         ASSERT_EQ(inProgram.size(), results.size());
 
@@ -26,7 +25,7 @@ struct ParserTest : testing::Test {
             IExecutable* expression = parser->getExecutable();
             std::string result = expression->execute();
             delete expression;
-            ASSERT_EQ(result, results[counter]);
+            ASSERT_EQ(result, results[i]);
         }
 
 
