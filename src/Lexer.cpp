@@ -54,7 +54,9 @@ Token Lexer::getOperatorsToken() {
                 ++index;
                 return {TokenType::OPERATOR, value};
             }
-        }
+        } else {
+            break;
+        };
     }
 
     return {TokenType::ERROR, "Not valid operator \"" + value + "\" on line " + std::to_string(line) + "!"};
