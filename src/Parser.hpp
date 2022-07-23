@@ -27,9 +27,10 @@ class Parser {
 
     IExpression* getExpression();
 public:
-    explicit Parser(Lexer *pLexer);
+    explicit Parser();
     virtual ~Parser();
 
+    void enterText(const std::string &inProgram);
     IExecutable* getExecutable();
 };
 

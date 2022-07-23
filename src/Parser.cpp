@@ -142,7 +142,7 @@ FunctionCallExpression *Parser::getFuncCallExpression(const std::string& identif
         func = functionRegister->get(identifier, arguments.size());
 
         if (!func) {
-            throw std::invalid_argument("Unknown function" + identifier + "!");
+            throw std::invalid_argument("Unknown function '" + identifier + "'!");
         }
 
     } catch (const std::invalid_argument& ia) {
@@ -163,22 +163,10 @@ ParameterExpression *Parser::getParameterExpression(const Token &token) {
     return new ParameterExpression(index);
 }
 
-Parser::Parser(Lexer *pLexer) {
-    this->lexer = pLexer;
-    functionRegister = new FunctionRegister;
+Parser::Parser() {
+    this->lexer = new Lexer();
+    functionRegister = new FunctionRegister();
 }
-
-IExecutable *Parser::getExecutable() {
-    IExpression *expression = getExpression();
-    auto *executable = dynamic_cast<IExecutable *>(expression);
-
-    if (!expression || executable) {
-        return executable;
-    } else {
-        throw std::invalid_argument("Not executable expression!");
-    }
-}
-
 Parser::~Parser() {
     delete functionRegister;
 }
@@ -191,5 +179,28 @@ NumberExpression *Parser::getNegativeNumberExpression() {
 
 
     return new NumberExpression( -std::stod( token.value ) );
+}
+
+void Parser::enterText(const std::string &inProgram) {
+    lexer->enterText(inProgram);
+}
+
+IExecutable *Parser::getExecutable() {
+    IExpression *expression = getExpression();
+    auto *executable = dynamic_cast<IExecutable *>(expression);
+
+    IExpression *nextExpression = getExpression();
+
+    if (nextExpression) {
+        delete expression;
+        delete nextExpression;
+        throw std::invalid_argument("Not executable expression!");
+    }
+
+    if (!expression || executable) {
+        return executable;
+    } else {
+        throw std::invalid_argument("Not executable expression!");
+    }
 }
 
