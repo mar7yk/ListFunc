@@ -15,10 +15,7 @@ class FunctionCallExpression : public IExpression, public IExecutable {
     IExpression *get();
 public:
     FunctionCallExpression(IFunction *func, const std::vector<IExpression *> &args);
-
     ~FunctionCallExpression() override;
-
-    void addArgument(IExpression* arg);
 
     std::string getValue(const std::vector<IExpression*> &_args) override;
     IExpression *get(const std::vector<IExpression *> &_args) override;

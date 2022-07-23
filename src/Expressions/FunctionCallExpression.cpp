@@ -13,16 +13,16 @@ FunctionCallExpression::~FunctionCallExpression() {
     }
 }
 
-void FunctionCallExpression::addArgument(IExpression* arg) {
-    args.push_back(arg);
-}
-
 std::string FunctionCallExpression::getValue(const std::vector<IExpression*> &_args) {
     return execute();
 }
 
 IExpression *FunctionCallExpression::get(const std::vector<IExpression *> &_args) {
-    return get();
+    std::vector<IExpression *> tempArgs;
+    for (int i = 0; i < args.size(); ++i) {
+        tempArgs.push_back(args[i]->get(_args));
+    }
+    return func->get(tempArgs);
 }
 
 IExpression *FunctionCallExpression::get() {
@@ -42,6 +42,10 @@ std::string FunctionCallExpression::execute() {
 }
 
 size_t FunctionCallExpression::getParmCount() {
-    return args.size();
+    size_t parmCount = 0;
+    for (int i = 0; i < args.size(); ++i) {
+        parmCount = std::max(parmCount, args[i]->getParmCount());
+    }
+    return parmCount;
 }
 
