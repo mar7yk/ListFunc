@@ -5,7 +5,6 @@
 #include "WriteFunction.hpp"
 
 IExpression *WriteFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
     IExpression *a = parm0.get(args);
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
@@ -15,7 +14,7 @@ IExpression *WriteFunction::get(const std::vector<IExpression *> &args) {
 
     std::cout << numberA->getNumber() << '\n';
 
-    forDelete = new NumberExpression(0);
-
-    return forDelete;
+    IExpression *result = new NumberExpression(0);
+    MemoryManager::AddTempExpression(result);
+    return result;
 }

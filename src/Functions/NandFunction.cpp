@@ -5,8 +5,6 @@
 #include "NandFunction.hpp"
 
 IExpression *NandFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
-
     IExpression *a = parm0.get(args);
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
@@ -15,8 +13,9 @@ IExpression *NandFunction::get(const std::vector<IExpression *> &args) {
     }
 
     if ( !(bool)numberA->getNumber() ) {
-        forDelete = new NumberExpression(1);
-        return forDelete;
+        IExpression *result = new NumberExpression(1);
+        MemoryManager::AddTempExpression(result);
+        return result;
     }
 
     IExpression *b = parm1.get(args);
@@ -27,10 +26,13 @@ IExpression *NandFunction::get(const std::vector<IExpression *> &args) {
 
 
     if ( !(bool)numberB->getNumber() ) {
-        forDelete = new NumberExpression(1);
-        return forDelete;
+        IExpression *result = new NumberExpression(1);
+        MemoryManager::AddTempExpression(result);
+        return result;
+
     } else {
-        forDelete = new NumberExpression(0);
-        return forDelete;
+        IExpression *result = new NumberExpression(0);
+        MemoryManager::AddTempExpression(result);
+        return result;
     }
 }

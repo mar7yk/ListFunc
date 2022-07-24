@@ -8,10 +8,6 @@
 #include "IFunction.hpp"
 
 class PredefineFunction : public IFunction {
-protected:
-    IExpression* forDelete;
-public:
-    ~PredefineFunction() override;
 };
 
 

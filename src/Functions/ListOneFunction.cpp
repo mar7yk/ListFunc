@@ -5,8 +5,6 @@
 #include "ListOneFunction.hpp"
 
 IExpression *ListOneFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
-
     IExpression *a = parm0.get(args);
     IExpression *b = parm1.get(args);
 
@@ -16,7 +14,7 @@ IExpression *ListOneFunction::get(const std::vector<IExpression *> &args) {
         throw std::invalid_argument("Not valid argument");
     }
 
-    forDelete = new InfinityListExpression(numberA->getNumber(), numberB->getNumber());
-
-    return forDelete;
+    IExpression *result = new InfinityListExpression(numberA->getNumber(), numberB->getNumber());
+    MemoryManager::AddTempExpression(result);
+    return result;
 }

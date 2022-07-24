@@ -5,8 +5,6 @@
 #include "TwoNumberFunction.hpp"
 
 IExpression *TwoNumberFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
-
     IExpression *a = parm0.get(args);
     IExpression *b = parm1.get(args);
 
@@ -17,6 +15,7 @@ IExpression *TwoNumberFunction::get(const std::vector<IExpression *> &args) {
         throw std::invalid_argument("Not valid argument");
     }
 
-    forDelete = getResult(numberA, numberB);
-    return forDelete;
+    IExpression *result = getResult(numberA, numberB);
+    MemoryManager::AddTempExpression(result);
+    return result;
 }

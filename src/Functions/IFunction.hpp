@@ -6,6 +6,7 @@
 #define LISTFUNC_IFUNCTION_HPP
 
 #include "../Expressions/IExpression.hpp"
+#include "../MemoryManager.hpp"
 
 class IFunction {
 

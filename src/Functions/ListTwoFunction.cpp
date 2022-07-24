@@ -5,8 +5,6 @@
 #include "ListTwoFunction.hpp"
 
 IExpression *ListTwoFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
-
     IExpression *a = parm0.get(args);
     IExpression *b = parm1.get(args);
     IExpression *c = parm2.get(args);
@@ -32,6 +30,6 @@ IExpression *ListTwoFunction::get(const std::vector<IExpression *> &args) {
         list = new ListExpression(items[i-1], list);
     }
 
-    forDelete = list;
-    return forDelete;
+    MemoryManager::AddTempExpression(list);
+    return list;
 }

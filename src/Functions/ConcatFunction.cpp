@@ -5,8 +5,6 @@
 #include "ConcatFunction.hpp"
 
 IExpression *ConcatFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
-
     IExpression *a = parm0.get(args);
     IExpression *b = parm1.get(args);
 
@@ -16,6 +14,7 @@ IExpression *ConcatFunction::get(const std::vector<IExpression *> &args) {
         throw std::invalid_argument("Not valid argument");
     }
 
-    forDelete = ListExpression::concat(listA, listB);
-    return forDelete;
+    IExpression *result = ListExpression::concat(listA, listB);
+    MemoryManager::AddTempExpression(result);
+    return result;
 }

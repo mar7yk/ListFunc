@@ -5,8 +5,6 @@
 #include "EqFunction.hpp"
 
 IExpression *EqFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
-
     IExpression *a = parm0.get(args);
     IExpression *b = parm1.get(args);
 
@@ -17,11 +15,14 @@ IExpression *EqFunction::get(const std::vector<IExpression *> &args) {
         throw std::invalid_argument("Not valid argument");
     }
 
+
     if (comparableA->getValue(args) == comparableB->getValue(args)) {
-        forDelete = new NumberExpression(1);
-        return forDelete;
+        IExpression *result = new NumberExpression(1);
+        MemoryManager::AddTempExpression(result);
+        return result;
     } else {
-        forDelete = new NumberExpression(0);
-        return forDelete;
+        IExpression *result = new NumberExpression(0);
+        MemoryManager::AddTempExpression(result);
+        return result;
     }
 }

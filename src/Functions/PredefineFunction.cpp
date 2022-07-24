@@ -3,8 +3,3 @@
 //
 
 #include "PredefineFunction.hpp"
-
-
-PredefineFunction::~PredefineFunction() {
-    delete forDelete;
-}

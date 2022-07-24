@@ -38,6 +38,9 @@ IExpression *FunctionCallExpression::getComparable() {
 std::string FunctionCallExpression::execute() {
     IExpression* result = get();
     std::string value = result->getValue(args);
+
+    MemoryManager::CleanTempExpression();
+
     return value;
 }
 

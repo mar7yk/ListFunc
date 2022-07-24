@@ -5,8 +5,6 @@
 #include "ListZeroFunction.hpp"
 
 IExpression *ListZeroFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
-
     IExpression *a = parm0.get(args);
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
@@ -14,7 +12,7 @@ IExpression *ListZeroFunction::get(const std::vector<IExpression *> &args) {
         throw std::invalid_argument("Not valid argument");
     }
 
-    forDelete = new InfinityListExpression(numberA->getNumber(), 1);
-
-    return forDelete;
+    IExpression *result = new InfinityListExpression(numberA->getNumber(), 1);
+    MemoryManager::AddTempExpression(result);
+    return result;
 }

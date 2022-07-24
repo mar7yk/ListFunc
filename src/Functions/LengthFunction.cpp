@@ -5,8 +5,6 @@
 #include "LengthFunction.hpp"
 
 IExpression *LengthFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
-
     IExpression *a = parm0.get(args);
 
     auto *listA = dynamic_cast<ListExpression *>(a);
@@ -16,10 +14,12 @@ IExpression *LengthFunction::get(const std::vector<IExpression *> &args) {
             throw std::invalid_argument(a->getValue(args) + "is not a number!");
         }
 
-        forDelete = new NumberExpression(-1);
-        return forDelete;
+        IExpression *result = new NumberExpression(-1);
+        MemoryManager::AddTempExpression(result);
+        return result;
     }
 
-    forDelete = new NumberExpression(listA->getLength());
-    return forDelete;
+    IExpression *result = new NumberExpression(listA->getLength());
+    MemoryManager::AddTempExpression(result);
+    return result;
 }

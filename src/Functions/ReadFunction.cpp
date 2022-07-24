@@ -5,11 +5,10 @@
 #include "ReadFunction.hpp"
 
 IExpression *ReadFunction::get(const std::vector<IExpression *> &args) {
-    delete forDelete;
-
     double num;
     std::cin >> num;
 
-    forDelete = new NumberExpression(num);
-    return forDelete;
+    IExpression *result = new NumberExpression(num);
+    MemoryManager::AddTempExpression(result);
+    return result;
 }
