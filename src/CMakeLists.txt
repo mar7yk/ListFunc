@@ -12,11 +12,10 @@ set(SOURCE_FILES
         Expressions/ListExpression.cpp Expressions/ListExpression.hpp
         Expressions/InfinityListExpression.cpp Expressions/InfinityListExpression.hpp
         Expressions/ParameterExpression.cpp Expressions/ParameterExpression.hpp
-        Functions/IFunction.hpp Functions/CustomFunction.cpp
-        Functions/CustomFunction.hpp Functions/PredefineFunction.cpp
+        Functions/IFunction.hpp
+        Functions/CustomFunction.cpp Functions/CustomFunction.hpp
         Expressions/FunctionCallExpression.cpp Expressions/FunctionCallExpression.hpp
         FunctionRegister.cpp FunctionRegister.hpp
-        Functions/PredefineFunction.hpp
         Functions/EqFunction.cpp Functions/EqFunction.hpp
         Functions/LeFunction.cpp Functions/LeFunction.hpp
         Functions/NandFunction.cpp Functions/NandFunction.hpp

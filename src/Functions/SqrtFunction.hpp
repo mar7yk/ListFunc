@@ -5,11 +5,11 @@
 #ifndef LISTFUNC_SQRTFUNCTION_HPP
 #define LISTFUNC_SQRTFUNCTION_HPP
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/NumberExpression.hpp"
 
-class SqrtFunction : public PredefineFunction {
+class SqrtFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
 
 public:

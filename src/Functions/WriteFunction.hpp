@@ -7,11 +7,11 @@
 
 #include <iostream>
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/NumberExpression.hpp"
 
-class WriteFunction : public PredefineFunction {
+class WriteFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
 
 public:

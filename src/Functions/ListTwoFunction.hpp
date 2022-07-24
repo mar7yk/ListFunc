@@ -5,12 +5,12 @@
 #ifndef LISTFUNC_LISTTWOFUNCTION_HPP
 #define LISTFUNC_LISTTWOFUNCTION_HPP
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/NumberExpression.hpp"
 #include "../Expressions/ListExpression.hpp"
 
-class ListTwoFunction : public PredefineFunction {
+class ListTwoFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
     ParameterExpression parm1 = ParameterExpression(1);
     ParameterExpression parm2 = ParameterExpression(2);

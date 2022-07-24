@@ -5,11 +5,11 @@
 #ifndef LISTFUNC_IFFUNCTION_HPP
 #define LISTFUNC_IFFUNCTION_HPP
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/NumberExpression.hpp"
 
-class IfFunction : public PredefineFunction {
+class IfFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
     ParameterExpression parm1 = ParameterExpression(1);
     ParameterExpression parm2 = ParameterExpression(2);

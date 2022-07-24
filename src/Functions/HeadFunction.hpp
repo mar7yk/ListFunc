@@ -5,11 +5,11 @@
 #ifndef LISTFUNC_HEADFUNCTION_HPP
 #define LISTFUNC_HEADFUNCTION_HPP
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/ListExpression.hpp"
 
-class HeadFunction : public PredefineFunction {
+class HeadFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
 
 public:

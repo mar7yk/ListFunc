@@ -5,12 +5,12 @@
 #ifndef LISTFUNC_LISTZEROFUNCTION_HPP
 #define LISTFUNC_LISTZEROFUNCTION_HPP
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/NumberExpression.hpp"
 #include "../Expressions/InfinityListExpression.hpp"
 
-class ListZeroFunction : public PredefineFunction {
+class ListZeroFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
 
 public:

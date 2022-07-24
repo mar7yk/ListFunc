@@ -5,12 +5,12 @@
 #ifndef LISTFUNC_LENGTHFUNCTION_HPP
 #define LISTFUNC_LENGTHFUNCTION_HPP
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/NumberExpression.hpp"
 #include "../Expressions/ListExpression.hpp"
 
-class LengthFunction : public PredefineFunction {
+class LengthFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
 
     public:

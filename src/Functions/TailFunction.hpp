@@ -5,11 +5,11 @@
 #ifndef LISTFUNC_TAILFUNCTION_HPP
 #define LISTFUNC_TAILFUNCTION_HPP
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/ListExpression.hpp"
 
-class TailFunction : public PredefineFunction {
+class TailFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
 
 public:

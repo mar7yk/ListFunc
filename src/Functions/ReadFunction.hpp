@@ -7,10 +7,10 @@
 
 #include <iostream>
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/NumberExpression.hpp"
 
-class ReadFunction : public PredefineFunction {
+class ReadFunction : public IFunction {
 public:
     IExpression *get(const std::vector<IExpression *> &args) override;
 };

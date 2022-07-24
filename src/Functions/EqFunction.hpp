@@ -5,11 +5,11 @@
 #ifndef LISTFUNC_EQFUNCTION_HPP
 #define LISTFUNC_EQFUNCTION_HPP
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/NumberExpression.hpp"
 
-class EqFunction : public PredefineFunction {
+class EqFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
     ParameterExpression parm1 = ParameterExpression(1);
 

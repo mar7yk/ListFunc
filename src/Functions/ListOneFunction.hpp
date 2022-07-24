@@ -5,12 +5,12 @@
 #ifndef LISTFUNC_LISTONEFUNCTION_HPP
 #define LISTFUNC_LISTONEFUNCTION_HPP
 
-#include "PredefineFunction.hpp"
+#include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/NumberExpression.hpp"
 #include "../Expressions/InfinityListExpression.hpp"
 
-class ListOneFunction : public PredefineFunction {
+class ListOneFunction : public IFunction {
     ParameterExpression parm0 = ParameterExpression(0);
     ParameterExpression parm1 = ParameterExpression(1);
 
