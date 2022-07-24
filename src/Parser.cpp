@@ -116,7 +116,7 @@ FunctionCallExpression *Parser::getFuncCallExpression(const std::string& identif
     std::vector<IExpression *> arguments;
 
     Token token = lexer->getNextToken();
-    IFunction* func;
+    auto* func = new FunctionProxy(functionRegister, identifier);
 
     try {
         while (token.value != ")") {
@@ -138,12 +138,12 @@ FunctionCallExpression *Parser::getFuncCallExpression(const std::string& identif
 
             throw std::invalid_argument("Missing operator ','!");
         }
+        func->addArgsNum(arguments.size());
+//        func = functionRegister->get(identifier, arguments.size());
 
-        func = functionRegister->get(identifier, arguments.size());
-
-        if (!func) {
-            throw std::invalid_argument("Unknown function '" + identifier + "'!");
-        }
+//        if (!func) {
+//            throw std::invalid_argument("Unknown function '" + identifier + "'!");
+//        }
 
     } catch (const std::invalid_argument& ia) {
         for (int i = 0; i < arguments.size(); ++i) {

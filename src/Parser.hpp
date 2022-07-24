@@ -11,6 +11,7 @@
 #include "Expressions/NumberExpression.hpp"
 #include "Expressions/ListExpression.hpp"
 #include "Functions/CustomFunction.hpp"
+#include "Functions/FunctionProxy.hpp"
 #include "Expressions/FunctionCallExpression.hpp"
 
 class Parser {
