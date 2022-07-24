@@ -7,7 +7,7 @@ set(SOURCE_FILES
         Lexer.cpp Lexer.hpp
         Token.hpp
         Parser.cpp Parser.hpp
-        Expressions/IExpression.hpp Expressions/IExecutable.hpp
+        Expressions/IExpression.hpp
         Expressions/NumberExpression.cpp Expressions/NumberExpression.hpp
         Expressions/ListExpression.cpp Expressions/ListExpression.hpp
         Expressions/InfinityListExpression.cpp Expressions/InfinityListExpression.hpp
