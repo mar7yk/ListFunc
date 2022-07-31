@@ -5,6 +5,8 @@
 #ifndef LISTFUNC_SQRTFUNCTION_HPP
 #define LISTFUNC_SQRTFUNCTION_HPP
 
+#include <cmath>
+
 #include "IFunction.hpp"
 #include "../Expressions/ParameterExpression.hpp"
 #include "../Expressions/NumberExpression.hpp"
