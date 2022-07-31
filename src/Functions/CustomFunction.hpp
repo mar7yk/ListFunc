@@ -14,7 +14,7 @@ public:
     explicit CustomFunction(IExpression *expression);
     ~CustomFunction() override;
 
-    IExpression *get(const std::vector<IExpression *> &args) override;
+    ExecutableExpression *get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) override;
 
     size_t getParmCount();
 };

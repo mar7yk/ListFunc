@@ -5,11 +5,9 @@
 #include "FunctionProxy.hpp"
 
 IFunction *FunctionProxy::getFunc() {
+    IFunction *function = functionRegister->get(name, argsNum);
     if (!function) {
-        function = functionRegister->get(name, argsNum);
-        if (!function) {
-            throw std::invalid_argument("Unknown function '" + name + "'!");
-        }
+        throw std::invalid_argument("Unknown function '" + name + "'!");
     }
     return function;
 }
@@ -17,15 +15,11 @@ IFunction *FunctionProxy::getFunc() {
 FunctionProxy::FunctionProxy(FunctionRegister *functionRegister, const std::string &name) : functionRegister(
         functionRegister), name(name) {}
 
-FunctionProxy::~FunctionProxy() {
-    delete function;
-}
-
 void FunctionProxy::addArgsNum(const size_t &argsCount) {
     argsNum = argsCount;
 }
 
-IExpression *FunctionProxy::get(const std::vector<IExpression *> &args) {
+ExecutableExpression *FunctionProxy::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
     IFunction *func = getFunc();
-    return func->get(args);
+    return func->get(args, customArgs);
 }

@@ -4,48 +4,22 @@
 
 #include "ListExpression.hpp"
 
-ListExpression::ListExpression(IExpression *head, ListExpression *tail) : head(head), tail(tail) {}
+ListExpression::ListExpression(ExecutableExpression *head, ListExpression *tail) : head(head), tail(tail) {}
 
 ListExpression::~ListExpression() {
     delete head;
     delete tail;
 }
 
-std::string ListExpression::getValues(const std::vector<IExpression *> &args) {
-    if (!head) {
-        return "";
-    }
-    std::string result = " " + head->getValue(args);
-    if (tail) {
-        result += tail->getValues(args);
-    }
-    return result;
-}
-
 std::string ListExpression::getValue(const std::vector<IExpression*> &args) {
-    if (!head) {
-        assert(tail == nullptr);
-        return "[]";
-    }
-
-    std::string result = "[";
-
-    result += head->getValue(args);
-
-    if (tail) {
-        result += tail->getValues(args);
-    }
-
-    result += "]";
-
-    return result;
+    return execute();
 }
 
-IExpression *ListExpression::get(const std::vector<IExpression *> &args) {
+ExecutableExpression *ListExpression::get(const std::vector<ExecutableExpression*> &customArgs) {
     return this;
 }
 
-IExpression *ListExpression::getComparable() {
+IExecutable *ListExpression::getComparable() {
     assert(!head || tail);
     if (head && !tail->tail) {
         return head;
@@ -63,7 +37,7 @@ int ListExpression::getLength() {
     return 1 + tail->getLength();
 }
 
-IExpression *ListExpression::getHead() {
+ExecutableExpression *ListExpression::getHead() {
     return head;
 }
 
@@ -102,41 +76,18 @@ size_t ListExpression::getParmCount() {
     return std::max(head->getParmCount(), tail->getParmCount());
 }
 
-ExecutableListExpression::ExecutableListExpression(IExpression *head, ListExpression *tail) : ListExpression(head,
-                                                                                                             tail) {}
-
-std::string ExecutableListExpression::executeValues() {
-    if (!head) {
-        return "";
-    }
-
-    auto *item = dynamic_cast<IExecutable *>(head);
-    assert(item != nullptr);
-    std::string result = " " + item->execute();
-
-    auto *tailItems = dynamic_cast<ExecutableListExpression *>(tail);
-    assert(tail == nullptr || tailItems != nullptr);
-    if (tailItems) {
-        result += tailItems->executeValues();
-    }
-    return result;
-}
-
-std::string ExecutableListExpression::execute() {
+std::string ListExpression::execute() {
     if (!head) {
         assert(tail == nullptr);
         return "[]";
     }
 
     std::string result = "[";
-    auto *item = dynamic_cast<IExecutable *>(head);
-    assert(item != nullptr);
-    result += item->execute();
 
-    auto *tailItems = dynamic_cast<ExecutableListExpression *>(tail);
-    assert(tail == nullptr || tailItems != nullptr);
-    if (tailItems) {
-        result += tailItems->executeValues();
+    result += head->execute();
+
+    if (tail) {
+        result += tail->executeValues();
     }
 
     result += "]";
@@ -144,11 +95,18 @@ std::string ExecutableListExpression::execute() {
     return result;
 }
 
-size_t ExecutableListExpression::getParmCount() {
-    return 0;
+std::string ListExpression::executeValues() {
+    if (!head) {
+        return "";
+    }
+    std::string result = " " + head->execute();
+    if (tail) {
+        result += tail->executeValues();
+    }
+    return result;
 }
 
-ListViewExpression::ListViewExpression(IExpression *head, ListExpression *tail)
+ListViewExpression::ListViewExpression(ExecutableExpression *head, ListExpression *tail)
         : ListExpression(head, tail) {}
 
 ListViewExpression::~ListViewExpression() {

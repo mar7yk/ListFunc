@@ -4,34 +4,34 @@
 
 #include "NandFunction.hpp"
 
-IExpression *NandFunction::get(const std::vector<IExpression *> &args) {
-    IExpression *a = parm0.get(args);
+ExecutableExpression *NandFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    IExecutable *a = args[0]->get(customArgs);
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
     if (!numberA) {
-        throw std::invalid_argument(a->getValue(args) + "is not a number!");
+        throw std::invalid_argument(a->execute() + "is not a number!");
     }
 
     if ( !(bool)numberA->getNumber() ) {
-        IExpression *result = new NumberExpression(1);
+        auto *result = new NumberExpression(1);
         MemoryManager::AddTempExpression(result);
         return result;
     }
 
-    IExpression *b = parm1.get(args);
+    IExecutable *b = args[1]->get(customArgs);
     auto *numberB = dynamic_cast<NumberExpression *>(b);
     if (!numberB) {
-        throw std::invalid_argument(b->getValue(args) + "is not a number!");
+        throw std::invalid_argument(b->execute() + "is not a number!");
     }
 
 
     if ( !(bool)numberB->getNumber() ) {
-        IExpression *result = new NumberExpression(1);
+        auto *result = new NumberExpression(1);
         MemoryManager::AddTempExpression(result);
         return result;
 
     } else {
-        IExpression *result = new NumberExpression(0);
+        auto *result = new NumberExpression(0);
         MemoryManager::AddTempExpression(result);
         return result;
     }

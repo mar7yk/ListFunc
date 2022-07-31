@@ -11,11 +11,11 @@ std::string InfinityListExpression::getValue(const std::vector<IExpression*> &ar
     return execute();
 }
 
-IExpression *InfinityListExpression::get(const std::vector<IExpression *> &args) {
+ExecutableExpression *InfinityListExpression::get(const std::vector<ExecutableExpression*> &customArgs) {
     return this;
 }
 
-IExpression *InfinityListExpression::getComparable() {
+IExecutable *InfinityListExpression::getComparable() {
     return this;
 }
 

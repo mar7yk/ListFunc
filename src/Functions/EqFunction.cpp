@@ -4,24 +4,24 @@
 
 #include "EqFunction.hpp"
 
-IExpression *EqFunction::get(const std::vector<IExpression *> &args) {
-    IExpression *a = parm0.get(args);
-    IExpression *b = parm1.get(args);
+ExecutableExpression *EqFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    IExecutable *a = args[0]->get(customArgs);
+    IExecutable *b = args[1]->get(customArgs);
 
-    IExpression *comparableA = a->getComparable();
-    IExpression *comparableB = b->getComparable();
+    IExecutable *comparableA = a->getComparable();
+    IExecutable *comparableB = b->getComparable();
 
     if (!comparableA || !comparableB) {
         throw std::invalid_argument("Not valid argument");
     }
 
 
-    if (comparableA->getValue(args) == comparableB->getValue(args)) {
-        IExpression *result = new NumberExpression(1);
+    if (comparableA->execute() == comparableB->execute()) {
+        auto *result = new NumberExpression(1);
         MemoryManager::AddTempExpression(result);
         return result;
     } else {
-        IExpression *result = new NumberExpression(0);
+        auto *result = new NumberExpression(0);
         MemoryManager::AddTempExpression(result);
         return result;
     }

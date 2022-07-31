@@ -10,11 +10,11 @@ std::string NumberExpression::getValue(const std::vector<IExpression*> &args) {
     return execute();
 }
 
-IExpression *NumberExpression::get(const std::vector<IExpression *> &args) {
+ExecutableExpression *NumberExpression::get(const std::vector<ExecutableExpression*> &customArgs) {
     return this;
 }
 
-IExpression *NumberExpression::getComparable() {
+IExecutable *NumberExpression::getComparable() {
     return this;
 }
 

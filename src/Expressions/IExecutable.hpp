@@ -10,6 +10,7 @@
 class IExecutable {
 public:
     virtual std::string execute() = 0;
+    virtual IExecutable* getComparable() = 0;
 
     virtual ~IExecutable() = default;
 };

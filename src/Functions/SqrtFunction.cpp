@@ -4,8 +4,8 @@
 
 #include "SqrtFunction.hpp"
 
-IExpression *SqrtFunction::get(const std::vector<IExpression *> &args) {
-    IExpression *a = parm0.get(args);
+ExecutableExpression *SqrtFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    IExecutable *a = args[0]->get(customArgs);
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
 
@@ -13,7 +13,7 @@ IExpression *SqrtFunction::get(const std::vector<IExpression *> &args) {
         throw std::invalid_argument("Not valid argument");
     }
 
-    IExpression *result = new NumberExpression(numberA->getNumber() * numberA->getNumber());
+    auto *result = new NumberExpression(numberA->getNumber() * numberA->getNumber());
     MemoryManager::AddTempExpression(result);
     return result;
 }

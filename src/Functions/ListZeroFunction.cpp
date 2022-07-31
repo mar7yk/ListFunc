@@ -4,15 +4,15 @@
 
 #include "ListZeroFunction.hpp"
 
-IExpression *ListZeroFunction::get(const std::vector<IExpression *> &args) {
-    IExpression *a = parm0.get(args);
+ExecutableExpression *ListZeroFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    IExecutable *a = args[0]->get(customArgs);
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
     if (!numberA) {
         throw std::invalid_argument("Not valid argument");
     }
 
-    IExpression *result = new InfinityListExpression(numberA->getNumber(), 1);
+    auto *result = new InfinityListExpression(numberA->getNumber(), 1);
     MemoryManager::AddTempExpression(result);
     return result;
 }

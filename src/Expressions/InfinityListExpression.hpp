@@ -5,10 +5,9 @@
 #ifndef LISTFUNC_INFINITYLISTEXPRESSION_HPP
 #define LISTFUNC_INFINITYLISTEXPRESSION_HPP
 
-#include "IExpression.hpp"
-#include "IExecutable.hpp"
+#include "ExecutableExpression.hpp"
 
-class InfinityListExpression : public IExpression, public IExecutable {
+class InfinityListExpression : public ExecutableExpression {
     double start;
     double interval;
 
@@ -16,8 +15,8 @@ public:
     InfinityListExpression(double start, double interval);
 
     std::string getValue(const std::vector<IExpression*> &args) override;
-    IExpression *get(const std::vector<IExpression *> &args) override;
-    IExpression *getComparable() override;
+    ExecutableExpression *get(const std::vector<ExecutableExpression*> &customArgs) override;
+    IExecutable *getComparable() override;
     size_t getParmCount() override;
 
     std::string execute() override;

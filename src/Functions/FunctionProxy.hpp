@@ -13,19 +13,16 @@ class FunctionProxy : public IFunction {
     std::string name;
     size_t argsNum = 0;
 
-    IFunction *function = nullptr;
-
     IFunction *getFunc();
 
 public:
     FunctionProxy() = delete;
     FunctionProxy(FunctionRegister *functionRegister, const std::string &name);
-    ~FunctionProxy() override;
 
     void addArgsNum(const size_t &argsCount);
 
 private:
-    IExpression *get(const std::vector<IExpression *> &args) override;
+    ExecutableExpression *get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) override;
 
 };
 

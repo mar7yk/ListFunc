@@ -10,8 +10,13 @@ CustomFunction::~CustomFunction() {
     delete expression;
 }
 
-IExpression *CustomFunction::get(const std::vector<IExpression *> &args) {
-    return expression->get(args);
+ExecutableExpression *CustomFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    std::vector<ExecutableExpression *> newCustomArgs;
+    for (int i = 0; i < args.size(); ++i) {
+        ExecutableExpression *CustomArg = args[i]->get(customArgs);
+        newCustomArgs.push_back(CustomArg);
+    }
+    return expression->get(newCustomArgs);
 }
 
 size_t CustomFunction::getParmCount() {

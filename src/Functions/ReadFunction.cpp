@@ -4,11 +4,11 @@
 
 #include "ReadFunction.hpp"
 
-IExpression *ReadFunction::get(const std::vector<IExpression *> &args) {
+ExecutableExpression *ReadFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
     double num;
     std::cin >> num;
 
-    IExpression *result = new NumberExpression(num);
+    auto *result = new NumberExpression(num);
     MemoryManager::AddTempExpression(result);
     return result;
 }

@@ -4,9 +4,9 @@
 
 #include "TwoNumberFunction.hpp"
 
-IExpression *TwoNumberFunction::get(const std::vector<IExpression *> &args) {
-    IExpression *a = parm0.get(args);
-    IExpression *b = parm1.get(args);
+ExecutableExpression *TwoNumberFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    IExecutable *a = args[0]->get(customArgs);
+    IExecutable *b = args[1]->get(customArgs);
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
     auto *numberB = dynamic_cast<NumberExpression *>(b);
@@ -15,7 +15,7 @@ IExpression *TwoNumberFunction::get(const std::vector<IExpression *> &args) {
         throw std::invalid_argument("Not valid argument");
     }
 
-    IExpression *result = getResult(numberA, numberB);
+    auto *result = getResult(numberA, numberB);
     MemoryManager::AddTempExpression(result);
     return result;
 }

@@ -4,10 +4,10 @@
 
 #include "ListTwoFunction.hpp"
 
-IExpression *ListTwoFunction::get(const std::vector<IExpression *> &args) {
-    IExpression *a = parm0.get(args);
-    IExpression *b = parm1.get(args);
-    IExpression *c = parm2.get(args);
+ExecutableExpression *ListTwoFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    IExecutable *a = args[0]->get(customArgs);
+    IExecutable *b = args[1]->get(customArgs);
+    IExecutable *c = args[2]->get(customArgs);
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
     auto *numberB = dynamic_cast<NumberExpression *>(b);
@@ -19,7 +19,7 @@ IExpression *ListTwoFunction::get(const std::vector<IExpression *> &args) {
     double itemValue = numberA->getNumber();
     double interval = numberB->getNumber();
 
-    std::vector<IExpression *> items(numberC->getUnsigned());
+    std::vector<NumberExpression *> items(numberC->getUnsigned());
     for (size_t i = 0; i < items.size(); ++i) {
         items[i] = new NumberExpression(itemValue);
         itemValue += interval;

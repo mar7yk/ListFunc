@@ -20,7 +20,7 @@ class Parser {
 
     IExpression *getExpression(const Token& token);
     NumberExpression *getNegativeNumberExpression();
-    ListExpression *getListExpression();
+    FunctionCallExpression *getListExpression();
     IExpression *getExpressionWhitIdentifier(const std::string& identifier);
     NumberExpression *addFunc(const std::string& identifier);
     FunctionCallExpression *getFuncCallExpression(const std::string& identifier);

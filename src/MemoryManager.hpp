@@ -15,12 +15,12 @@ class MemoryManager {
     static MemoryManager *GetInstance();
     MemoryManager() = default;
 
-    std::stack<IExpression *> tempExpressions;
+    std::stack<IExecutable *> tempExpressions;
 public:
     MemoryManager(MemoryManager &other) = delete;
     void operator=(const MemoryManager &other) = delete;
 
-    static void AddTempExpression(IExpression * expression);
+    static void AddTempExpression(IExecutable * expression);
     static void CleanTempExpression();
 };
 

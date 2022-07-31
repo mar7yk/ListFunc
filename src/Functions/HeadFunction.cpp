@@ -4,8 +4,8 @@
 
 #include "HeadFunction.hpp"
 
-IExpression *HeadFunction::get(const std::vector<IExpression *> &args) {
-    IExpression *a = parm0.get(args);
+ExecutableExpression *HeadFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    IExecutable *a = args[0]->get(customArgs);
 
     auto *listA = dynamic_cast<ListExpression *>(a);
     if (!listA) {

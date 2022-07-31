@@ -4,8 +4,8 @@
 
 #include "WriteFunction.hpp"
 
-IExpression *WriteFunction::get(const std::vector<IExpression *> &args) {
-    IExpression *a = parm0.get(args);
+ExecutableExpression *WriteFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    IExecutable *a = args[0]->get(customArgs);
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
     if (!numberA) {
@@ -14,7 +14,7 @@ IExpression *WriteFunction::get(const std::vector<IExpression *> &args) {
 
     std::cout << numberA->getNumber() << '\n';
 
-    IExpression *result = new NumberExpression(0);
+    auto *result = new NumberExpression(0);
     MemoryManager::AddTempExpression(result);
     return result;
 }

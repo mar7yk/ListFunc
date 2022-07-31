@@ -13,14 +13,14 @@ MemoryManager *MemoryManager::GetInstance() {
     return manager;
 }
 
-void MemoryManager::AddTempExpression(IExpression *expression) {
+void MemoryManager::AddTempExpression(IExecutable *expression) {
     MemoryManager *memoryManager = GetInstance();
     memoryManager->tempExpressions.push(expression);
 }
 
 void MemoryManager::CleanTempExpression() {
     MemoryManager *memoryManager = GetInstance();
-    std::stack<IExpression *> &tempExpressions = memoryManager->tempExpressions;
+    std::stack<IExecutable *> &tempExpressions = memoryManager->tempExpressions;
     while (!tempExpressions.empty()) {
         delete tempExpressions.top();
         tempExpressions.pop();

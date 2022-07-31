@@ -5,11 +5,9 @@
 #ifndef LISTFUNC_NUMBEREXPRESSION_HPP
 #define LISTFUNC_NUMBEREXPRESSION_HPP
 
+#include "ExecutableExpression.hpp"
 
-#include "IExpression.hpp"
-#include "IExecutable.hpp"
-
-class NumberExpression : public IExpression, public IExecutable {
+class NumberExpression : public ExecutableExpression {
     double value;
 
 public:
@@ -22,8 +20,8 @@ public:
     bool isUnsigned() const;
 
     std::string getValue(const std::vector<IExpression*> &args) override;
-    IExpression *get(const std::vector<IExpression *> &args) override;
-    IExpression *getComparable() override;
+    ExecutableExpression *get(const std::vector<ExecutableExpression*> &customArgs) override;
+    IExecutable *getComparable() override;
 
     size_t getParmCount() override;
 

@@ -14,8 +14,7 @@ public:
     explicit ParameterExpression(size_t index);
 
     std::string getValue(const std::vector<IExpression*> &args) override;
-    IExpression *get(const std::vector<IExpression *> &args) override;
-    IExpression *getComparable() override;
+    ExecutableExpression *get(const std::vector<ExecutableExpression*> &customArgs) override;
 
     size_t getParmCount() override;
 };

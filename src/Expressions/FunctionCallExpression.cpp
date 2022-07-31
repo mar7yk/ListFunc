@@ -11,33 +11,31 @@ FunctionCallExpression::~FunctionCallExpression() {
     for (int i = 0; i < args.size(); ++i) {
         delete args[i];
     }
+    delete func;
 }
 
 std::string FunctionCallExpression::getValue(const std::vector<IExpression*> &_args) {
     return execute();
 }
 
-IExpression *FunctionCallExpression::get(const std::vector<IExpression *> &_args) {
+ExecutableExpression *FunctionCallExpression::get(const std::vector<ExecutableExpression*> &customArgs) {
     std::vector<IExpression *> tempArgs;
-    for (int i = 0; i < args.size(); ++i) {
-        tempArgs.push_back(args[i]->get(_args));
-    }
-    return func->get(tempArgs);
+    return func->get(args, customArgs);
 }
 
-IExpression *FunctionCallExpression::get() {
-    return func->get(args);
+IExecutable *FunctionCallExpression::get() {
+    return func->get(args, {});
 }
 
-IExpression *FunctionCallExpression::getComparable() {
-    IExpression* result = get();
-    IExpression* comparable = result->getComparable();
+IExecutable *FunctionCallExpression::getComparable() {
+    IExecutable* result = get();
+    IExecutable* comparable = result->getComparable();
     return comparable;
 }
 
 std::string FunctionCallExpression::execute() {
-    IExpression* result = get();
-    std::string value = result->getValue(args);
+    IExecutable* result = get();
+    std::string value = result->execute();
 
     MemoryManager::CleanTempExpression();
 

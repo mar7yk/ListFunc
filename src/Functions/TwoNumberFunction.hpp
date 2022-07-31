@@ -10,13 +10,10 @@
 #include "../Expressions/NumberExpression.hpp"
 
 class TwoNumberFunction : public IFunction {
-    ParameterExpression parm0 = ParameterExpression(0);
-    ParameterExpression parm1 = ParameterExpression(1);
-
     virtual NumberExpression *getResult(NumberExpression *numberA, NumberExpression *numberB) = 0;
 
 public:
-    IExpression *get(const std::vector<IExpression *> &args) override;
+    ExecutableExpression *get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) override;
 };
 
 

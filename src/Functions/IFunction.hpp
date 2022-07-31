@@ -5,13 +5,13 @@
 #ifndef LISTFUNC_IFUNCTION_HPP
 #define LISTFUNC_IFUNCTION_HPP
 
-#include "../Expressions/IExpression.hpp"
+#include "../Expressions/IExecutable.hpp"
 #include "../MemoryManager.hpp"
 
 class IFunction {
 
 public:
-    virtual IExpression* get(const std::vector<IExpression*> &args) = 0;
+    virtual ExecutableExpression* get(const std::vector<IExpression*> &args, const std::vector<ExecutableExpression*> &customArgs) = 0;
 
     virtual ~IFunction() = default;
 };

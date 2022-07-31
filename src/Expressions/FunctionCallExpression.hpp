@@ -6,20 +6,20 @@
 #define LISTFUNC_FUNCTIONCALLEXPRESSION_HPP
 
 #include "../Functions/IFunction.hpp"
-#include "IExecutable.hpp"
+#include "ExecutableExpression.hpp"
 
-class FunctionCallExpression : public IExpression, public IExecutable {
+class FunctionCallExpression : public ExecutableExpression {
     IFunction* func;
     std::vector<IExpression*> args;
 
-    IExpression *get();
+    IExecutable *get();
 public:
     FunctionCallExpression(IFunction *func, const std::vector<IExpression *> &args);
     ~FunctionCallExpression() override;
 
     std::string getValue(const std::vector<IExpression*> &_args) override;
-    IExpression *get(const std::vector<IExpression *> &_args) override;
-    IExpression *getComparable() override;
+    ExecutableExpression *get(const std::vector<ExecutableExpression*> &customArgs) override;
+    IExecutable *getComparable() override;
     size_t getParmCount() override;
 
     std::string execute() override;

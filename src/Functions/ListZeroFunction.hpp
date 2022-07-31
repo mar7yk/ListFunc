@@ -11,10 +11,8 @@
 #include "../Expressions/InfinityListExpression.hpp"
 
 class ListZeroFunction : public IFunction {
-    ParameterExpression parm0 = ParameterExpression(0);
-
 public:
-    IExpression *get(const std::vector<IExpression *> &args) override;
+    ExecutableExpression *get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) override;
 };
 
 

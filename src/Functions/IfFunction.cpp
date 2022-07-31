@@ -4,17 +4,20 @@
 
 #include "IfFunction.hpp"
 
-IExpression *IfFunction::get(const std::vector<IExpression *> &args) {
-
-    IExpression *a = parm0.get(args);
-    IExpression *b = parm1.get(args);
-    IExpression *c = parm2.get(args);
+ExecutableExpression *IfFunction::get(const std::vector<IExpression *> &args, const std::vector<ExecutableExpression*> &customArgs) {
+    IExecutable *a = args[0]->get(customArgs);
+    IExpression *b = args[1];
+    IExpression *c = args[2];
 
     auto *numberA = dynamic_cast<NumberExpression *>(a);
 
+    if (!numberA) {
+        throw std::invalid_argument("Not valid argument");
+    }
+
     if(bool(numberA->getNumber())) {
-        return b;
+        return b->get(customArgs);
     } else {
-        return c;
+        return c->get(customArgs);
     }
 }

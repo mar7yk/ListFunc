@@ -3,6 +3,7 @@
 //
 
 #include "Parser.hpp"
+#include "Functions/GetListFunction.hpp"
 
 IExpression *Parser::getExpression() {
     Token token = lexer->getNextToken();
@@ -39,15 +40,12 @@ IExpression *Parser::getExpression(const Token& token) {
     }
 }
 
-ListExpression *Parser::getListExpression() {
+FunctionCallExpression *Parser::getListExpression() {
     bool isListExecutable = true;
     std::vector<IExpression *> items;
     Token token = lexer->getNextToken();
     try {
         while (token.value != "]") {
-            if (token.type == TokenType::ARGUMENT){
-                isListExecutable = false;
-            }
             IExpression *item = getExpression(token);
             if (!item) {
                 throw std::invalid_argument("Missing operator ']'!");
@@ -63,19 +61,9 @@ ListExpression *Parser::getListExpression() {
         throw ia;
     }
 
-    if (isListExecutable) {
-        auto list = new ExecutableListExpression(nullptr, nullptr);
-        for (size_t i = items.size(); i > 0; --i) {
-            list = new ExecutableListExpression(items[i-1], list);
-        }
-        return list;
-    }
-
-    auto list = new ListExpression(nullptr, nullptr);
-    for (size_t i = items.size(); i > 0; --i) {
-        list = new ListExpression(items[i-1], list);
-    }
-    return list;
+    GetListFunction *func = new GetListFunction();
+    auto* functionCall = new FunctionCallExpression(func, items);
+    return functionCall;
 }
 
 IExpression *Parser::getExpressionWhitIdentifier(const std::string& identifier) {

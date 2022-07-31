@@ -10,12 +10,8 @@ std::string ParameterExpression::getValue(const std::vector<IExpression*> &args)
     return args[index]->getValue(args);
 }
 
-IExpression *ParameterExpression::get(const std::vector<IExpression *> &args) {
-    return args[index]->get(args);
-}
-
-IExpression *ParameterExpression::getComparable() {
-    return nullptr;
+ExecutableExpression *ParameterExpression::get(const std::vector<ExecutableExpression*> &customArgs) {
+    return customArgs[index];
 }
 
 size_t ParameterExpression::getParmCount() {
