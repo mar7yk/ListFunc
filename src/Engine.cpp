@@ -4,11 +4,16 @@
 
 #include "Engine.hpp"
 
-void Engine::run() {
+[[noreturn]] void Engine::run() {
     while (true) {
         std::string line;
         std::cout << "> ";
         getline(std::cin, line);
+
+        if (tryToLoadingFileCommand(line)) {
+            continue;
+        }
+
         consoleHandle->executeLine(line);
     }
 }
@@ -16,9 +21,31 @@ void Engine::run() {
 Engine::Engine() {
     parser = new Parser();
     consoleHandle = new ConsoleHandle(parser);
+    fileHandler = new FileHandler(parser);
 }
 
 Engine::~Engine() {
     delete parser;
     delete consoleHandle;
+    delete fileHandler;
+}
+
+bool Engine::tryToLoadingFileCommand(const std::string &line) {
+    std::stringstream ss;
+    ss << line;
+    std::string load;
+    ss >> load;
+
+    if (load != "load") {
+        return false;
+    }
+    ss >> std::ws;
+
+    std::string fileName;
+    std::getline(ss, fileName);
+    std::cout << "Loading \""  << fileName << "\"...\n";
+
+    fileHandler->executeFile(fileName);
+
+    return true;
 }

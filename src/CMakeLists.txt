@@ -39,6 +39,6 @@ set(SOURCE_FILES
         Functions/WriteFunction.cpp Functions/WriteFunction.hpp
         ConsoleHandle.cpp ConsoleHandle.hpp
         MemoryManager.cpp MemoryManager.hpp
-        Functions/FunctionProxy.cpp Functions/FunctionProxy.hpp Functions/GetListFunction.cpp Functions/GetListFunction.hpp Expressions/ExecutableExpression.hpp)
+        Functions/FunctionProxy.cpp Functions/FunctionProxy.hpp Functions/GetListFunction.cpp Functions/GetListFunction.hpp Expressions/ExecutableExpression.hpp FileHandler.cpp FileHandler.hpp)
 
 add_library(src STATIC ${SOURCE_FILES})
