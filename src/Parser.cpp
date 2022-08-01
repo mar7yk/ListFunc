@@ -81,7 +81,7 @@ IExpression *Parser::getExpressionWhitIdentifier(const std::string& identifier) 
         }
 
     } else {
-        throw std::invalid_argument("Unexpected word '" + token.value + "'!");
+        throw std::invalid_argument("Not valid expression!");
     }
 }
 
