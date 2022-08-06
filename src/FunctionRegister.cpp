@@ -84,6 +84,7 @@ FunctionRegister::FunctionRegister() {
     add("concat", 2, new ConcatFunction());
     add("if", 3, new IfFunction());
     add("read", 0, new ReadFunction());
+    add("write", 1, new WriteFunction());
     add("int", 1, new IntFunction());
 
     add("add", 2, new AddFunction());

@@ -8,6 +8,7 @@
     while (true) {
         std::string line;
         std::cout << "> ";
+        std::cin >> std::ws;
         getline(std::cin, line);
 
         if (tryToLoadingFileCommand(line)) {

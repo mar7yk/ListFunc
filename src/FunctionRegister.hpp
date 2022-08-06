@@ -19,6 +19,7 @@
 #include "Functions/ConcatFunction.hpp"
 #include "Functions/IfFunction.hpp"
 #include "Functions/ReadFunction.hpp"
+#include "Functions/WriteFunction.hpp"
 #include "Functions/IntFunction.hpp"
 #include "Functions/AddFunction.hpp"
 #include "Functions/SubFunction.hpp"
