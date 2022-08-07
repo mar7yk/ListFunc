@@ -37,7 +37,7 @@ set(SOURCE_FILES
         Functions/ModFunction.cpp Functions/ModFunction.hpp
         Functions/SqrtFunction.cpp Functions/SqrtFunction.hpp
         Functions/WriteFunction.cpp Functions/WriteFunction.hpp
-        ConsoleHandle.cpp ConsoleHandle.hpp
+        ConsoleHandler.cpp ConsoleHandler.hpp
         MemoryManager.cpp MemoryManager.hpp
         Functions/FunctionProxy.cpp Functions/FunctionProxy.hpp Functions/GetListFunction.cpp Functions/GetListFunction.hpp Expressions/ExecutableExpression.hpp FileHandler.cpp FileHandler.hpp)
 

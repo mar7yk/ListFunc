@@ -21,7 +21,7 @@
 
 Engine::Engine() {
     parser = new Parser();
-    consoleHandle = new ConsoleHandle(parser);
+    consoleHandle = new ConsoleHandler(parser);
     fileHandler = new FileHandler(parser);
 }
 

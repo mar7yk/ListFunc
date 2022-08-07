@@ -7,12 +7,12 @@
 
 #include <sstream>
 
-#include "ConsoleHandle.hpp"
+#include "ConsoleHandler.hpp"
 #include "FileHandler.hpp"
 
 class Engine {
     Parser *parser;
-    ConsoleHandle *consoleHandle;
+    ConsoleHandler *consoleHandle;
     FileHandler *fileHandler;
 
     bool tryToLoadingFileCommand(const std::string &line);
