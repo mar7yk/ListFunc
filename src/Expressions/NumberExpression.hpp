@@ -19,7 +19,6 @@ public:
     bool isInt() const;
     bool isUnsigned() const;
 
-    std::string getValue(const std::vector<IExpression*> &args) override;
     ExecutableExpression *get(const std::vector<ExecutableExpression*> &customArgs) override;
     IExecutable *getComparable() override;
 

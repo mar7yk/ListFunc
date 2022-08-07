@@ -7,10 +7,6 @@
 
 InfinityListExpression::InfinityListExpression(double start, double interval) : start(start), interval(interval) {}
 
-std::string InfinityListExpression::getValue(const std::vector<IExpression*> &args) {
-    return execute();
-}
-
 ExecutableExpression *InfinityListExpression::get(const std::vector<ExecutableExpression*> &customArgs) {
     return this;
 }

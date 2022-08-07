@@ -14,7 +14,6 @@ class ExecutableExpression;
 
 class IExpression {
 public:
-    virtual std::string getValue(const std::vector<IExpression*> &args) = 0;
     virtual ExecutableExpression* get(const std::vector<ExecutableExpression*> &customArgs) = 0;
     virtual size_t getParmCount() = 0;
 

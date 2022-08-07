@@ -14,7 +14,6 @@ class InfinityListExpression : public ExecutableExpression {
 public:
     InfinityListExpression(double start, double interval);
 
-    std::string getValue(const std::vector<IExpression*> &args) override;
     ExecutableExpression *get(const std::vector<ExecutableExpression*> &customArgs) override;
     IExecutable *getComparable() override;
     size_t getParmCount() override;

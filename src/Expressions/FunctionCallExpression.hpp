@@ -17,7 +17,6 @@ public:
     FunctionCallExpression(IFunction *func, const std::vector<IExpression *> &args);
     ~FunctionCallExpression() override;
 
-    std::string getValue(const std::vector<IExpression*> &_args) override;
     ExecutableExpression *get(const std::vector<ExecutableExpression*> &customArgs) override;
     IExecutable *getComparable() override;
     size_t getParmCount() override;

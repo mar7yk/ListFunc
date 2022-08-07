@@ -14,10 +14,6 @@ FunctionCallExpression::~FunctionCallExpression() {
     delete func;
 }
 
-std::string FunctionCallExpression::getValue(const std::vector<IExpression*> &_args) {
-    return execute();
-}
-
 ExecutableExpression *FunctionCallExpression::get(const std::vector<ExecutableExpression*> &customArgs) {
     std::vector<IExpression *> tempArgs;
     return func->get(args, customArgs);

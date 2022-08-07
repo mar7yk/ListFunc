@@ -11,10 +11,6 @@ ListExpression::~ListExpression() {
     delete tail;
 }
 
-std::string ListExpression::getValue(const std::vector<IExpression*> &args) {
-    return execute();
-}
-
 ExecutableExpression *ListExpression::get(const std::vector<ExecutableExpression*> &customArgs) {
     return this;
 }

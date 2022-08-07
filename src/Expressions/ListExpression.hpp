@@ -24,7 +24,6 @@ public:
 
     static ListExpression *concat(ListExpression * left, ListExpression * right);
 
-    std::string getValue(const std::vector<IExpression*> &args) override;
     ExecutableExpression *get(const std::vector<ExecutableExpression*> &customArgs) override;
     IExecutable *getComparable() override;
     size_t getParmCount() override;

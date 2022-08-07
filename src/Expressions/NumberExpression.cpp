@@ -6,10 +6,6 @@
 
 NumberExpression::NumberExpression(double value) : value(value) {}
 
-std::string NumberExpression::getValue(const std::vector<IExpression*> &args) {
-    return execute();
-}
-
 ExecutableExpression *NumberExpression::get(const std::vector<ExecutableExpression*> &customArgs) {
     return this;
 }
