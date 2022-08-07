@@ -31,7 +31,9 @@ public:
     explicit Parser();
     virtual ~Parser();
 
+    ///add new text for executing
     void enterText(const std::string &inProgram);
+
     IExecutable* getExecutable();
 };
 

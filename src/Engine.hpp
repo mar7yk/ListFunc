@@ -22,7 +22,7 @@ public:
 
     virtual ~Engine();
 
-    [[noreturn]] void run();
+    [[noreturn]] void run(); ///< starting point
 };
 
 

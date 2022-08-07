@@ -13,7 +13,7 @@ class ConsoleHandler {
 public:
     explicit ConsoleHandler(Parser *parser);
 
-    void executeLine(const std::string &line);
+    void executeLine(const std::string &line); ///< execute single line string
 };
 
 

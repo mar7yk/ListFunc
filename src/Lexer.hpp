@@ -18,16 +18,28 @@ class Lexer {
     size_t index = 0;
     size_t line = 0;
 
+    ///move index while there is not whitespace on index position
     void cleanSpaces();
+
+    ///@return operator token
     Token getOperatorsToken();
+
+    ///@return number token
     Token getNumbToken();
+
+    ///@return argument token
     Token getArgumentToken();
+
+    ///@return identifier token
     Token getIdentifierToken();
 
 public:
     Lexer() = default;
 
+    ///add new text for executing
     void enterText(const std::string &inProgram);
+
+    ///@return pointer to new token
     Token getNextToken();
 };
 

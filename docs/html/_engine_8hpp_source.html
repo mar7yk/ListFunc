@@ -82,18 +82,18 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_file_handler_8hpp.html">FileHandler.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_engine.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_engine.html">Engine</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="class_parser.html">Parser</a> *parser;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_console_handler.html">ConsoleHandler</a> *consoleHandle;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_file_handler.html">FileHandler</a> *fileHandler;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_engine.html#a0cba35acfbc3de2db53d9bf7e3725937">   14</a></span>    <a class="code hl_class" href="class_parser.html">Parser</a> *<a class="code hl_variable" href="class_engine.html#a0cba35acfbc3de2db53d9bf7e3725937">parser</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_engine.html#a698f429074653cf8f5f9ef4730042a8e">   15</a></span>    <a class="code hl_class" href="class_console_handler.html">ConsoleHandler</a> *<a class="code hl_variable" href="class_engine.html#a698f429074653cf8f5f9ef4730042a8e">consoleHandle</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_engine.html#af72f8506bf0b38574c5d6bf5f8508e62">   16</a></span>    <a class="code hl_class" href="class_file_handler.html">FileHandler</a> *<a class="code hl_variable" href="class_engine.html#af72f8506bf0b38574c5d6bf5f8508e62">fileHandler</a>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">bool</span> tryToLoadingFileCommand(<span class="keyword">const</span> std::string &amp;line);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_engine.html#a47a8e8f8caf040306a68310789c45d05">tryToLoadingFileCommand</a>(<span class="keyword">const</span> std::string &amp;line);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_engine.html#a8c98683b0a3aa28d8ab72a8bcd0d52f2">Engine</a>();</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_engine.html#a8ef7030a089ecb30bbfcb9e43094717a">~Engine</a>();</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    [[noreturn]] <span class="keywordtype">void</span> <a class="code hl_function" href="class_engine.html#a1a210cf30d6bd330b3649439ecd6d6cc">run</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    [[noreturn]] <span class="keywordtype">void</span> <a class="code hl_function" href="class_engine.html#a1a210cf30d6bd330b3649439ecd6d6cc">run</a>(); </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
@@ -102,9 +102,13 @@ $(function() {
 <div class="ttc" id="a_file_handler_8hpp_html"><div class="ttname"><a href="_file_handler_8hpp.html">FileHandler.hpp</a></div></div>
 <div class="ttc" id="aclass_console_handler_html"><div class="ttname"><a href="class_console_handler.html">ConsoleHandler</a></div><div class="ttdef"><b>Definition:</b> ConsoleHandler.hpp:11</div></div>
 <div class="ttc" id="aclass_engine_html"><div class="ttname"><a href="class_engine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> Engine.hpp:13</div></div>
-<div class="ttc" id="aclass_engine_html_a1a210cf30d6bd330b3649439ecd6d6cc"><div class="ttname"><a href="class_engine.html#a1a210cf30d6bd330b3649439ecd6d6cc">Engine::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> Engine.cpp:7</div></div>
+<div class="ttc" id="aclass_engine_html_a0cba35acfbc3de2db53d9bf7e3725937"><div class="ttname"><a href="class_engine.html#a0cba35acfbc3de2db53d9bf7e3725937">Engine::parser</a></div><div class="ttdeci">Parser * parser</div><div class="ttdef"><b>Definition:</b> Engine.hpp:14</div></div>
+<div class="ttc" id="aclass_engine_html_a1a210cf30d6bd330b3649439ecd6d6cc"><div class="ttname"><a href="class_engine.html#a1a210cf30d6bd330b3649439ecd6d6cc">Engine::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">starting point</div><div class="ttdef"><b>Definition:</b> Engine.cpp:7</div></div>
+<div class="ttc" id="aclass_engine_html_a47a8e8f8caf040306a68310789c45d05"><div class="ttname"><a href="class_engine.html#a47a8e8f8caf040306a68310789c45d05">Engine::tryToLoadingFileCommand</a></div><div class="ttdeci">bool tryToLoadingFileCommand(const std::string &amp;line)</div><div class="ttdef"><b>Definition:</b> Engine.cpp:34</div></div>
+<div class="ttc" id="aclass_engine_html_a698f429074653cf8f5f9ef4730042a8e"><div class="ttname"><a href="class_engine.html#a698f429074653cf8f5f9ef4730042a8e">Engine::consoleHandle</a></div><div class="ttdeci">ConsoleHandler * consoleHandle</div><div class="ttdef"><b>Definition:</b> Engine.hpp:15</div></div>
 <div class="ttc" id="aclass_engine_html_a8c98683b0a3aa28d8ab72a8bcd0d52f2"><div class="ttname"><a href="class_engine.html#a8c98683b0a3aa28d8ab72a8bcd0d52f2">Engine::Engine</a></div><div class="ttdeci">Engine()</div><div class="ttdef"><b>Definition:</b> Engine.cpp:22</div></div>
 <div class="ttc" id="aclass_engine_html_a8ef7030a089ecb30bbfcb9e43094717a"><div class="ttname"><a href="class_engine.html#a8ef7030a089ecb30bbfcb9e43094717a">Engine::~Engine</a></div><div class="ttdeci">virtual ~Engine()</div><div class="ttdef"><b>Definition:</b> Engine.cpp:28</div></div>
+<div class="ttc" id="aclass_engine_html_af72f8506bf0b38574c5d6bf5f8508e62"><div class="ttname"><a href="class_engine.html#af72f8506bf0b38574c5d6bf5f8508e62">Engine::fileHandler</a></div><div class="ttdeci">FileHandler * fileHandler</div><div class="ttdef"><b>Definition:</b> Engine.hpp:16</div></div>
 <div class="ttc" id="aclass_file_handler_html"><div class="ttname"><a href="class_file_handler.html">FileHandler</a></div><div class="ttdef"><b>Definition:</b> FileHandler.hpp:13</div></div>
 <div class="ttc" id="aclass_parser_html"><div class="ttname"><a href="class_parser.html">Parser</a></div><div class="ttdef"><b>Definition:</b> Parser.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->

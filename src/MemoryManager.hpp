@@ -20,7 +20,10 @@ public:
     MemoryManager(MemoryManager &other) = delete;
     void operator=(const MemoryManager &other) = delete;
 
+    ///registers expression to by deleted from #CleanTempExpression()
     static void AddTempExpression(IExecutable * expression);
+
+    ///delete all expressions registers from #AddTempExpression(IExecutable * expression)
     static void CleanTempExpression();
 };
 

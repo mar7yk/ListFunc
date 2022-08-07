@@ -15,7 +15,7 @@ class FileHandler {
 public:
     explicit FileHandler(Parser *parser);
 
-    void executeFile(const std::string &fileName);
+    void executeFile(const std::string &fileName); ///< execute file with name fileName
 };
 
 

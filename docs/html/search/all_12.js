@@ -8,5 +8,6 @@ var searchData=
   ['_7eifunction_5',['~IFunction',['../class_i_function.html#aabae9fb2cbf51c2170e55e4bab779745',1,'IFunction']]],
   ['_7elistexpression_6',['~ListExpression',['../class_list_expression.html#af76df5e0a4547468d16858d2dad89cb5',1,'ListExpression']]],
   ['_7elistviewexpression_7',['~ListViewExpression',['../class_list_view_expression.html#a3b1f4c9687b61ca068a34abc06675c68',1,'ListViewExpression']]],
-  ['_7eparser_8',['~Parser',['../class_parser.html#a3e658b5917a93a3ef648050d060e3a93',1,'Parser']]]
+  ['_7enode_8',['~Node',['../struct_function_register_1_1_node.html#a3237cfe32c292fb4779ab7dfe2a113c3',1,'FunctionRegister::Node']]],
+  ['_7eparser_9',['~Parser',['../class_parser.html#a3e658b5917a93a3ef648050d060e3a93',1,'Parser']]]
 ];

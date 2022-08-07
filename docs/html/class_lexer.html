@@ -64,6 +64,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_lexer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Lexer Class Reference</div></div>
 </div><!--header-->
@@ -75,10 +77,38 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ece67400cc4fdf07d1dae1b586fa0e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a4ece67400cc4fdf07d1dae1b586fa0e1">Lexer</a> ()=default</td></tr>
 <tr class="separator:a4ece67400cc4fdf07d1dae1b586fa0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4874b9d7e5d03d9dc5cdc463be4fe901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a4874b9d7e5d03d9dc5cdc463be4fe901">enterText</a> (const std::string &amp;inProgram)</td></tr>
+<tr class="memitem:a4874b9d7e5d03d9dc5cdc463be4fe901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a4874b9d7e5d03d9dc5cdc463be4fe901">enterText</a> (const std::string &amp;<a class="el" href="class_lexer.html#a0a9060d161c70f6e5fc18e056e04c0ef">inProgram</a>)</td></tr>
+<tr class="memdesc:a4874b9d7e5d03d9dc5cdc463be4fe901"><td class="mdescLeft">&#160;</td><td class="mdescRight">add new text for executing  <a href="class_lexer.html#a4874b9d7e5d03d9dc5cdc463be4fe901">More...</a><br /></td></tr>
 <tr class="separator:a4874b9d7e5d03d9dc5cdc463be4fe901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8d555ee90674216793bb43c05bba64f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_token.html">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#aa8d555ee90674216793bb43c05bba64f">getNextToken</a> ()</td></tr>
 <tr class="separator:aa8d555ee90674216793bb43c05bba64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8b0a723fa8bd87905ab52522208f39fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a8b0a723fa8bd87905ab52522208f39fc">cleanSpaces</a> ()</td></tr>
+<tr class="memdesc:a8b0a723fa8bd87905ab52522208f39fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">move index while there is not whitespace on index position  <a href="class_lexer.html#a8b0a723fa8bd87905ab52522208f39fc">More...</a><br /></td></tr>
+<tr class="separator:a8b0a723fa8bd87905ab52522208f39fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aeca4ecf44a9f2a3982c4d0a72dd711"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_token.html">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a5aeca4ecf44a9f2a3982c4d0a72dd711">getOperatorsToken</a> ()</td></tr>
+<tr class="separator:a5aeca4ecf44a9f2a3982c4d0a72dd711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3de1df6529674dc8014a7c23b21a477e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_token.html">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a3de1df6529674dc8014a7c23b21a477e">getNumbToken</a> ()</td></tr>
+<tr class="separator:a3de1df6529674dc8014a7c23b21a477e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f83f7d7c380e0dd3303baf6f48f3a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_token.html">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a27f83f7d7c380e0dd3303baf6f48f3a9">getArgumentToken</a> ()</td></tr>
+<tr class="separator:a27f83f7d7c380e0dd3303baf6f48f3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b5b690c0d2196d5578c930bad19ca59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_token.html">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a9b5b690c0d2196d5578c930bad19ca59">getIdentifierToken</a> ()</td></tr>
+<tr class="separator:a9b5b690c0d2196d5578c930bad19ca59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a53970af5677e3e35e5a897f693ef29f2"><td class="memItemLeft" align="right" valign="top">std::unordered_set&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a53970af5677e3e35e5a897f693ef29f2">operatorsSymbols</a> = {'(', ')', ',', '[', ']', '-', '&gt;'}</td></tr>
+<tr class="separator:a53970af5677e3e35e5a897f693ef29f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5313d97295939197ecff183a5a94bfcb"><td class="memItemLeft" align="right" valign="top">std::unordered_set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a5313d97295939197ecff183a5a94bfcb">operators</a> = {&quot;(&quot;, &quot;)&quot;, &quot;,&quot;, &quot;[&quot; , &quot;]&quot;, &quot;-&gt;&quot;, &quot;-&quot;}</td></tr>
+<tr class="separator:a5313d97295939197ecff183a5a94bfcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a9060d161c70f6e5fc18e056e04c0ef"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a0a9060d161c70f6e5fc18e056e04c0ef">inProgram</a></td></tr>
+<tr class="separator:a0a9060d161c70f6e5fc18e056e04c0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e40a32d8f11db585bc459adcc2036b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a97e40a32d8f11db585bc459adcc2036b">index</a> = 0</td></tr>
+<tr class="separator:a97e40a32d8f11db585bc459adcc2036b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb179a1fe10c876d8200ed7eeeaea43f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#aeb179a1fe10c876d8200ed7eeeaea43f">line</a> = 0</td></tr>
+<tr class="separator:aeb179a1fe10c876d8200ed7eeeaea43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4ece67400cc4fdf07d1dae1b586fa0e1" name="a4ece67400cc4fdf07d1dae1b586fa0e1"></a>
@@ -107,6 +137,33 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8b0a723fa8bd87905ab52522208f39fc" name="a8b0a723fa8bd87905ab52522208f39fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0a723fa8bd87905ab52522208f39fc">&#9670;&nbsp;</a></span>cleanSpaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lexer::cleanSpaces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>move index while there is not whitespace on index position </p>
+
+</div>
+</div>
 <a id="a4874b9d7e5d03d9dc5cdc463be4fe901" name="a4874b9d7e5d03d9dc5cdc463be4fe901"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4874b9d7e5d03d9dc5cdc463be4fe901">&#9670;&nbsp;</a></span>enterText()</h2>
 
@@ -123,6 +180,60 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>add new text for executing </p>
+
+</div>
+</div>
+<a id="a27f83f7d7c380e0dd3303baf6f48f3a9" name="a27f83f7d7c380e0dd3303baf6f48f3a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f83f7d7c380e0dd3303baf6f48f3a9">&#9670;&nbsp;</a></span>getArgumentToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_token.html">Token</a> Lexer::getArgumentToken </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>argument token </dd></dl>
+
+</div>
+</div>
+<a id="a9b5b690c0d2196d5578c930bad19ca59" name="a9b5b690c0d2196d5578c930bad19ca59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b5b690c0d2196d5578c930bad19ca59">&#9670;&nbsp;</a></span>getIdentifierToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_token.html">Token</a> Lexer::getIdentifierToken </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>identifier token </dd></dl>
+
 </div>
 </div>
 <a id="aa8d555ee90674216793bb43c05bba64f" name="aa8d555ee90674216793bb43c05bba64f"></a>
@@ -138,6 +249,170 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>pointer to new token </dd></dl>
+
+</div>
+</div>
+<a id="a3de1df6529674dc8014a7c23b21a477e" name="a3de1df6529674dc8014a7c23b21a477e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de1df6529674dc8014a7c23b21a477e">&#9670;&nbsp;</a></span>getNumbToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_token.html">Token</a> Lexer::getNumbToken </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>number token </dd></dl>
+
+</div>
+</div>
+<a id="a5aeca4ecf44a9f2a3982c4d0a72dd711" name="a5aeca4ecf44a9f2a3982c4d0a72dd711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aeca4ecf44a9f2a3982c4d0a72dd711">&#9670;&nbsp;</a></span>getOperatorsToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_token.html">Token</a> Lexer::getOperatorsToken </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>operator token </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a97e40a32d8f11db585bc459adcc2036b" name="a97e40a32d8f11db585bc459adcc2036b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97e40a32d8f11db585bc459adcc2036b">&#9670;&nbsp;</a></span>index</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Lexer::index = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a9060d161c70f6e5fc18e056e04c0ef" name="a0a9060d161c70f6e5fc18e056e04c0ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a9060d161c70f6e5fc18e056e04c0ef">&#9670;&nbsp;</a></span>inProgram</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Lexer::inProgram</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb179a1fe10c876d8200ed7eeeaea43f" name="aeb179a1fe10c876d8200ed7eeeaea43f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb179a1fe10c876d8200ed7eeeaea43f">&#9670;&nbsp;</a></span>line</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Lexer::line = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5313d97295939197ecff183a5a94bfcb" name="a5313d97295939197ecff183a5a94bfcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5313d97295939197ecff183a5a94bfcb">&#9670;&nbsp;</a></span>operators</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_set&lt;std::string&gt; Lexer::operators = {&quot;(&quot;, &quot;)&quot;, &quot;,&quot;, &quot;[&quot; , &quot;]&quot;, &quot;-&gt;&quot;, &quot;-&quot;}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53970af5677e3e35e5a897f693ef29f2" name="a53970af5677e3e35e5a897f693ef29f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53970af5677e3e35e5a897f693ef29f2">&#9670;&nbsp;</a></span>operatorsSymbols</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_set&lt;char&gt; Lexer::operatorsSymbols = {'(', ')', ',', '[', ']', '-', '&gt;'}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

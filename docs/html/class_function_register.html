@@ -65,13 +65,22 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_function_register-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">FunctionRegister Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>Store all functions known to the interpreter.  
+ <a href="class_function_register.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_function_register_8hpp_source.html">FunctionRegister.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_function_register_1_1_node.html">Node</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af4a6dd532d8621b4d9a31c20cb98239e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function_register.html#af4a6dd532d8621b4d9a31c20cb98239e">FunctionRegister</a> ()</td></tr>
@@ -80,8 +89,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a76145547e409988b410e9d31bab2784e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad14885423329a33ef65787d98314f917"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_function.html">IFunction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function_register.html#ad14885423329a33ef65787d98314f917">get</a> (const std::string &amp;name, const size_t &amp;argsNum)</td></tr>
 <tr class="separator:ad14885423329a33ef65787d98314f917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a364fdad0f54811d9ed29426ea10f1b56"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_function_register_1_1_node.html">FunctionRegister::Node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_function_register.html#a364fdad0f54811d9ed29426ea10f1b56">rood</a></td></tr>
+<tr class="separator:a364fdad0f54811d9ed29426ea10f1b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Store all functions known to the interpreter. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af4a6dd532d8621b4d9a31c20cb98239e" name="af4a6dd532d8621b4d9a31c20cb98239e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4a6dd532d8621b4d9a31c20cb98239e">&#9670;&nbsp;</a></span>FunctionRegister()</h2>
 
@@ -131,6 +147,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >add function with name and count of arguments </p><dl class="section return"><dt>Returns</dt><dd>true if override other function </dd></dl>
 
 </div>
 </div>
@@ -158,6 +175,30 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>pointer to function with name and count of arguments </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a364fdad0f54811d9ed29426ea10f1b56" name="a364fdad0f54811d9ed29426ea10f1b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364fdad0f54811d9ed29426ea10f1b56">&#9670;&nbsp;</a></span>rood</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_function_register_1_1_node.html">FunctionRegister::Node</a> FunctionRegister::rood</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
