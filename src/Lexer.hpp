@@ -11,12 +11,12 @@
 #include "Token.hpp"
 
 class Lexer {
-    std::unordered_set<char> operatorsSymbols = {'(', ')', ',', '[', ']', '-', '>'};
-    std::unordered_set<std::string> operators = {"(", ")", ",", "[" , "]", "->", "-"};
+    std::unordered_set<char> operatorsSymbols = {'(', ')', ',', '[', ']', '-', '>', '/'};
+    std::unordered_set<std::string> operators = {"(", ")", ",", "[" , "]", "->", "-", "//"};
 
     std::string inProgram;
     size_t index = 0;
-    size_t line = 0;
+    bool isOnComment;
 
     ///move index while there is not whitespace on index position
     void cleanSpaces();
@@ -37,7 +37,7 @@ public:
     Lexer() = default;
 
     ///add new text for executing
-    void enterText(const std::string &inProgram);
+    void enterText(const std::string &text);
 
     ///@return pointer to new token
     Token getNextToken();

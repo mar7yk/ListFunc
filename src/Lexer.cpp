@@ -4,10 +4,10 @@
 
 #include "Lexer.hpp"
 
-void Lexer::enterText(const std::string &inProgram) {
-    this->inProgram = inProgram;
+void Lexer::enterText(const std::string &text) {
+    this->inProgram = text;
     this->index = 0;
-    this->line = 0;
+    this->isOnComment = false;
 }
 
 Token Lexer::getNextToken() {
@@ -16,6 +16,12 @@ Token Lexer::getNextToken() {
 
     if (index == inProgram.length()) {
         return {TokenType::END, ""};
+    }
+
+    if (inProgram[index] == '/' && inProgram[index + 1] == '/') {
+        index += 2;
+        isOnComment = true;
+        return getNextToken();
     }
 
     if (operatorsSymbols.find( inProgram[index] ) != operatorsSymbols.end()) {
@@ -32,16 +38,17 @@ Token Lexer::getNextToken() {
         return getIdentifierToken();
 
     } else {
-        return {TokenType::ERROR, "Not valid syntax on line " + std::to_string(line) + "!"};
+        return {TokenType::ERROR, "Not valid syntax!"};
     }
 }
 
 void Lexer::cleanSpaces() {
-    while (isspace(inProgram[index])) {
-        if(inProgram[index] == '\n') {
-            ++line;
-        }
+    while ( index < inProgram.size() && (isspace(inProgram[index]) || isOnComment)) {
         ++index;
+
+        if (inProgram[index] == '\n') {
+            isOnComment = false;
+        }
     }
 }
 
@@ -63,7 +70,7 @@ Token Lexer::getOperatorsToken() {
         --index;
     }
 
-    return {TokenType::ERROR, "Not valid operator \"" + value + "\" on line " + std::to_string(line) + "!"};
+    return {TokenType::ERROR, "Not valid operator \"" + value + "\"!"};
 }
 
 Token Lexer::getNumbToken() {
@@ -76,7 +83,7 @@ Token Lexer::getNumbToken() {
 
         } else if(inProgram[index] == '.') {
             if(haveDot) {
-                return {TokenType::ERROR, "Not valid number \"" + value + "\" on line " + std::to_string(line) + "!"};
+                return {TokenType::ERROR, "Not valid number \"" + value + "\"!"};
 
             } else {
                 haveDot = true;
@@ -98,7 +105,7 @@ Token Lexer::getArgumentToken() {
     }
 
     if (value.length() == 0) {
-        return {TokenType::ERROR, "Not valid argument on line " + std::to_string(line) + "!"};
+        return {TokenType::ERROR, "Not valid argument!"};
     }
 
     return {TokenType::ARGUMENT, value};
