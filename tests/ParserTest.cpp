@@ -196,3 +196,13 @@ TEST_F(ParserTest, testAritmetic) {
     this->test(inProgram, results);
 }
 
+TEST_F(ParserTest, testRecursion) {
+    std::vector<std::string> inProgram = {
+            "fact -> if( le( 1, #0 ) ,  mul( fact( sub( #0, 1 ) ), #0 ), 1 )",
+            "fact(13)",
+    };
+    std::vector<std::string> results = {"0", "6227020800"};
+
+    this->test(inProgram, results);
+}
+
