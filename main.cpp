@@ -15,7 +15,10 @@
  * <function-name>([<param-expression>,...])\n
  * <function-declaration>::= <function-name> -> <param-expression>\n
  * \section p2 Built-in functions
- * - eq(#0, #1) returns the boolean value of #0 == #1 (two numbers are equal when their values are equal, two lists are equal when their corresponding elements are equal, a number and a list are equal if the list has 1 element and it is equal to the number)
+ * - eq(#0, #1) returns the boolean value of #0 == #1 \n
+ * \- two numbers are equal when their values are equal\n
+ * \- two lists are equal when their corresponding elements are equal\n
+ * \- a number and a list are equal if the list has 1 element and it is equal to the number
  * - le(#0, #1) returns the boolean value of #0 < #1
  * - nand(#0, #1) returns the boolean value of !#0 || !#1
  * - length(#0) returns the number of elements in the given list, or -1 if the argument is a number
@@ -36,7 +39,21 @@
  * - mod(#0, #1) returns value of #0 % #1
  * - sqrt(#0) returns root of #0
  * \section p3 Examples
- *
+ * > //enter number\n
+ * > \> 32\n
+ * > 32\n
+ * > \n
+ * > //enter list\n
+ * > \> [1 2 3]\n
+ * > [1 2 3]\n
+ * > \n
+ * > //use custom\n
+ * > \> myList -> [3 4 5 7 9 10]\n
+ * > 0\n
+ * > \> head(myList())\n
+ * > 3\n
+ * > \> tail(myList())\n
+ * > [4 5 7 9 10]\n
  */
 
 #include "src/Engine.hpp"

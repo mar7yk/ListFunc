@@ -20,5 +20,6 @@ var searchData=
   ['intfunction_2ecpp_17',['IntFunction.cpp',['../_int_function_8cpp.html',1,'']]],
   ['intfunction_2ehpp_18',['IntFunction.hpp',['../_int_function_8hpp.html',1,'']]],
   ['isint_19',['isInt',['../class_number_expression.html#a0b9daba14b721d6436d5055943a58a6c',1,'NumberExpression']]],
-  ['isunsigned_20',['isUnsigned',['../class_number_expression.html#ace2fe4d000592764e36085a416c56321',1,'NumberExpression']]]
+  ['isoncomment_20',['isOnComment',['../class_lexer.html#a7de0de9b15a87fd94e991c80931decc4',1,'Lexer']]],
+  ['isunsigned_21',['isUnsigned',['../class_number_expression.html#ace2fe4d000592764e36085a416c56321',1,'NumberExpression']]]
 ];

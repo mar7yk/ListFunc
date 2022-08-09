@@ -10,6 +10,7 @@
 
 #include "Parser.hpp"
 
+///Handle code in a file
 class FileHandler {
     Parser *parser;
 public:

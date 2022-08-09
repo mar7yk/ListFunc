@@ -8,6 +8,7 @@
 
 #include "Parser.hpp"
 
+///Handle code entered in console
 class ConsoleHandler {
     Parser *parser;
 public:

@@ -87,8 +87,6 @@ Inheritance diagram for InfinityListExpression:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c0a682ec0cb73ccd2b85e3391d08d21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infinity_list_expression.html#a3c0a682ec0cb73ccd2b85e3391d08d21">InfinityListExpression</a> (double <a class="el" href="class_infinity_list_expression.html#a3ae1527dbabe96dcf1ae8e666e2682c6">start</a>, double <a class="el" href="class_infinity_list_expression.html#a755e761e66eee840e111fc1dd526b7dd">interval</a>)</td></tr>
 <tr class="separator:a3c0a682ec0cb73ccd2b85e3391d08d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9518ca57f674b4a0f6c874072899ec3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infinity_list_expression.html#ad9518ca57f674b4a0f6c874072899ec3">getValue</a> (const std::vector&lt; <a class="el" href="class_i_expression.html">IExpression</a> * &gt; &amp;args) override</td></tr>
-<tr class="separator:ad9518ca57f674b4a0f6c874072899ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0a1beafbfed3d797937eb6607075a60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_executable_expression.html">ExecutableExpression</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infinity_list_expression.html#aa0a1beafbfed3d797937eb6607075a60">get</a> (const std::vector&lt; <a class="el" href="class_executable_expression.html">ExecutableExpression</a> * &gt; &amp;customArgs) override</td></tr>
 <tr class="separator:aa0a1beafbfed3d797937eb6607075a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35d236606fc2b33c19f9f14681561a5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_executable.html">IExecutable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infinity_list_expression.html#a35d236606fc2b33c19f9f14681561a5b">getComparable</a> () override</td></tr>
@@ -98,8 +96,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a11bd085e5796514b82b21712bdac4a46"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infinity_list_expression.html#a11bd085e5796514b82b21712bdac4a46">execute</a> () override</td></tr>
 <tr class="separator:a11bd085e5796514b82b21712bdac4a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_i_expression"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_i_expression')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_i_expression.html">IExpression</a></td></tr>
-<tr class="memitem:afb781c42b01be9caccf0d5d0503d61bd inherit pub_methods_class_i_expression"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_expression.html#afb781c42b01be9caccf0d5d0503d61bd">getValue</a> (const std::vector&lt; <a class="el" href="class_i_expression.html">IExpression</a> * &gt; &amp;args)=0</td></tr>
-<tr class="separator:afb781c42b01be9caccf0d5d0503d61bd inherit pub_methods_class_i_expression"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42f0c7860dbc08da76eb0315eddcf41c inherit pub_methods_class_i_expression"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_executable_expression.html">ExecutableExpression</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_expression.html#a42f0c7860dbc08da76eb0315eddcf41c">get</a> (const std::vector&lt; <a class="el" href="class_executable_expression.html">ExecutableExpression</a> * &gt; &amp;customArgs)=0</td></tr>
 <tr class="separator:a42f0c7860dbc08da76eb0315eddcf41c inherit pub_methods_class_i_expression"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07013b9792745b51cea088fbaa43453d inherit pub_methods_class_i_expression"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_expression.html#a07013b9792745b51cea088fbaa43453d">getParmCount</a> ()=0</td></tr>
@@ -257,34 +253,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="class_i_expression.html#a07013b9792745b51cea088fbaa43453d">IExpression</a>.</p>
-
-</div>
-</div>
-<a id="ad9518ca57f674b4a0f6c874072899ec3" name="ad9518ca57f674b4a0f6c874072899ec3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9518ca57f674b4a0f6c874072899ec3">&#9670;&nbsp;</a></span>getValue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string InfinityListExpression::getValue </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="class_i_expression.html">IExpression</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_i_expression.html#afb781c42b01be9caccf0d5d0503d61bd">IExpression</a>.</p>
 
 </div>
 </div>

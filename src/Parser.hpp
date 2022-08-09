@@ -14,6 +14,7 @@
 #include "Functions/FunctionProxy.hpp"
 #include "Expressions/FunctionCallExpression.hpp"
 
+///Transform a text to expressions
 class Parser {
     Lexer *lexer;
     FunctionRegister *functionRegister;

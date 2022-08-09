@@ -10,9 +10,10 @@
 
 #include "Token.hpp"
 
+///Transform a text to tokens
 class Lexer {
-    std::unordered_set<char> operatorsSymbols = {'(', ')', ',', '[', ']', '-', '>', '/'};
-    std::unordered_set<std::string> operators = {"(", ")", ",", "[" , "]", "->", "-", "//"};
+    std::unordered_set<char> operatorsSymbols = {'(', ')', ',', '[', ']', '-', '>'};
+    std::unordered_set<std::string> operators = {"(", ")", ",", "[" , "]", "->", "-"};
 
     std::string inProgram;
     size_t index = 0;

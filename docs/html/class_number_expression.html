@@ -97,8 +97,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0b9daba14b721d6436d5055943a58a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace2fe4d000592764e36085a416c56321"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_number_expression.html#ace2fe4d000592764e36085a416c56321">isUnsigned</a> () const</td></tr>
 <tr class="separator:ace2fe4d000592764e36085a416c56321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a01e141a4a5a401074aefe81122329e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_number_expression.html#a3a01e141a4a5a401074aefe81122329e">getValue</a> (const std::vector&lt; <a class="el" href="class_i_expression.html">IExpression</a> * &gt; &amp;args) override</td></tr>
-<tr class="separator:a3a01e141a4a5a401074aefe81122329e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa59a3baf4215e289a6272781519281b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_executable_expression.html">ExecutableExpression</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_number_expression.html#aa59a3baf4215e289a6272781519281b6">get</a> (const std::vector&lt; <a class="el" href="class_executable_expression.html">ExecutableExpression</a> * &gt; &amp;customArgs) override</td></tr>
 <tr class="separator:aa59a3baf4215e289a6272781519281b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a570dd25aa9ff406b7c45626e03854815"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_executable.html">IExecutable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_number_expression.html#a570dd25aa9ff406b7c45626e03854815">getComparable</a> () override</td></tr>
@@ -108,8 +106,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa46f6b4211574d1132d04a377a81b308"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_number_expression.html#aa46f6b4211574d1132d04a377a81b308">execute</a> () override</td></tr>
 <tr class="separator:aa46f6b4211574d1132d04a377a81b308"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_i_expression"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_i_expression')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_i_expression.html">IExpression</a></td></tr>
-<tr class="memitem:afb781c42b01be9caccf0d5d0503d61bd inherit pub_methods_class_i_expression"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_expression.html#afb781c42b01be9caccf0d5d0503d61bd">getValue</a> (const std::vector&lt; <a class="el" href="class_i_expression.html">IExpression</a> * &gt; &amp;args)=0</td></tr>
-<tr class="separator:afb781c42b01be9caccf0d5d0503d61bd inherit pub_methods_class_i_expression"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42f0c7860dbc08da76eb0315eddcf41c inherit pub_methods_class_i_expression"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_executable_expression.html">ExecutableExpression</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_expression.html#a42f0c7860dbc08da76eb0315eddcf41c">get</a> (const std::vector&lt; <a class="el" href="class_executable_expression.html">ExecutableExpression</a> * &gt; &amp;customArgs)=0</td></tr>
 <tr class="separator:a42f0c7860dbc08da76eb0315eddcf41c inherit pub_methods_class_i_expression"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07013b9792745b51cea088fbaa43453d inherit pub_methods_class_i_expression"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_expression.html#a07013b9792745b51cea088fbaa43453d">getParmCount</a> ()=0</td></tr>
@@ -314,34 +310,6 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3a01e141a4a5a401074aefe81122329e" name="a3a01e141a4a5a401074aefe81122329e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a01e141a4a5a401074aefe81122329e">&#9670;&nbsp;</a></span>getValue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string NumberExpression::getValue </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="class_i_expression.html">IExpression</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_i_expression.html#afb781c42b01be9caccf0d5d0503d61bd">IExpression</a>.</p>
 
 </div>
 </div>

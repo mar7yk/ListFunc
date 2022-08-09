@@ -85,7 +85,10 @@ Definition of ListFunc</h1>
 <h1><a class="anchor" id="p2"></a>
 Built-in functions</h1>
 <ul>
-<li>eq(#0, #1) returns the boolean value of #0 == #1 (two numbers are equal when their values are equal, two lists are equal when their corresponding elements are equal, a number and a list are equal if the list has 1 element and it is equal to the number)</li>
+<li>eq(#0, #1) returns the boolean value of #0 == #1 <br  />
+- two numbers are equal when their values are equal<br  />
+- two lists are equal when their corresponding elements are equal<br  />
+- a number and a list are equal if the list has 1 element and it is equal to the number</li>
 <li>le(#0, #1) returns the boolean value of #0 &lt; #1</li>
 <li>nand(#0, #1) returns the boolean value of !#0 || !#1</li>
 <li>length(#0) returns the number of elements in the given list, or -1 if the argument is a number</li>
@@ -108,6 +111,24 @@ Built-in functions</h1>
 </ul>
 <h1><a class="anchor" id="p3"></a>
 Examples</h1>
+<blockquote class="doxtable">
+<p >&zwj;//enter number<br  />
+&gt; 32<br  />
+32<br  />
+<br  />
+//enter list<br  />
+&gt; [1 2 3]<br  />
+[1 2 3]<br  />
+<br  />
+//use custom<br  />
+&gt; myList -&gt; [3 4 5 7 9 10]<br  />
+0<br  />
+&gt; head(myList())<br  />
+3<br  />
+&gt; tail(myList())<br  />
+[4 5 7 9 10]<br  />
+</p>
+</blockquote>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

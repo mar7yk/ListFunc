@@ -9,7 +9,7 @@
 
 #include "Expressions/IExpression.hpp"
 
-
+///Help for memory management
 class MemoryManager {
     static MemoryManager *manager;
     static MemoryManager *GetInstance();
