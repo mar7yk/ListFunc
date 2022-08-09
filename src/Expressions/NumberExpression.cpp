@@ -15,12 +15,12 @@ IExecutable *NumberExpression::getComparable() {
 }
 
 bool NumberExpression::isInt() const {
-    return value - int(value) < 0.000001;
+    return abs(value - size_t(value)) < 0.000001;
 }
 
 std::string NumberExpression::execute() {
     if (isInt()) {
-        return std::to_string(int(value));
+        return std::to_string(size_t(value));
     }
     return std::to_string(value);
 }
