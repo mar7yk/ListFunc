@@ -191,7 +191,7 @@ TEST_F(ParserTest, testAritmetic) {
             "sqrt( div( sub( mul( add(3,2), 2), 6), 2 ) )",
             "mod(14, 5)",
     };
-    std::vector<std::string> results = {"4", "4"};
+    std::vector<std::string> results = {"1.414214", "4"};
 
     this->test(inProgram, results);
 }
